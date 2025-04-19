@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,7 +27,7 @@ export default function ImpactPage() {
       id: 3,
       name: "Grace",
       age: 14,
-      image: "https://images.unsplash.com/photo-1599687266725-0d4d52a0de64?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3",
+      image: "https://blog.marketingwords.com/wp-content/uploads/2020/11/success-stories.jpg",
       beforeStory: "Grace lived in extreme poverty with her grandmother who was too elderly to provide proper care. They often went days without food, and Grace had never attended school.",
       afterStory: "Since joining our program, Grace has shown exceptional talent in mathematics and science. She represents our foundation in national competitions and mentors younger children in our after-school programs.",
       quote: "I used to think girls like me couldn't go to school or have dreams. Now I know I can be anything I want to be if I work hard enough."
