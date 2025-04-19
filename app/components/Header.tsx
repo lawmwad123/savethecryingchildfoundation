@@ -54,7 +54,7 @@ export default function Header() {
           <div className="ml-2">
             <Link 
               href="/donate" 
-              className="bg-[#00a269] hover:bg-[#007a50] text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-colors"
+              className="bg-[#c0392b] hover:bg-[#962d22] text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-colors"
             >
               Donate
             </Link>
@@ -63,7 +63,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-[#00c680]" 
+          className="md:hidden text-[#e74c3c]" 
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -94,7 +94,7 @@ export default function Header() {
             <div className="pt-2">
               <Link 
                 href="/donate" 
-                className="bg-[#00a269] text-white font-medium py-2 rounded-full text-center hover:bg-[#007a50] transition-colors block shadow-sm"
+                className="bg-[#c0392b] text-white font-medium py-2 rounded-full text-center hover:bg-[#962d22] transition-colors block shadow-sm"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Donate
@@ -112,7 +112,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link 
       href={href} 
-      className="text-[#00a269] font-medium px-3 py-2 text-sm hover:text-[#00c680] transition-colors rounded-md hover:bg-[#f8f3eb]/50"
+      className="text-[#c0392b] font-medium px-3 py-2 text-sm hover:text-[#e74c3c] transition-colors rounded-md hover:bg-[#f8f3eb]/50"
     >
       {label}
     </Link>
@@ -123,7 +123,7 @@ function MobileNavLink({ href, label, onClick }: { href: string; label: string; 
   return (
     <Link 
       href={href} 
-      className="text-[#00a269] font-medium hover:text-[#00c680] transition-colors py-2 border-b border-[#00a269]/10"
+      className="text-[#c0392b] font-medium hover:text-[#e74c3c] transition-colors py-2 border-b border-[#c0392b]/10"
       onClick={onClick}
     >
       {label}

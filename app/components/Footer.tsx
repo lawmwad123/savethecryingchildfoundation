@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#00a269] text-white pt-12 pb-6 relative">
+    <footer className="bg-[#c0392b] text-white pt-12 pb-6 relative">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#00c680] to-[#00a269] opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#e74c3c] to-[#c0392b] opacity-90"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -81,7 +81,7 @@ export default function Footer() {
               />
               <button 
                 type="submit" 
-                className="w-full bg-[#007a50] hover:bg-[#00653f] text-white transition-colors py-2 rounded text-sm font-medium shadow-sm"
+                className="w-full bg-[#962d22] hover:bg-[#7d261c] text-white transition-colors py-2 rounded text-sm font-medium shadow-sm"
               >
                 Subscribe
               </button>

@@ -121,7 +121,7 @@ export default function NewsPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative bg-[#932327] py-20 text-white">
+      <section className="relative bg-[#c0392b] py-20 text-white">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">News & Events</h1>
@@ -144,7 +144,7 @@ export default function NewsPage() {
       {/* Featured Posts */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#932327]">Featured Stories</h2>
+          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">Featured Stories</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogPosts.filter(post => post.featured).map((post) => (
@@ -156,7 +156,7 @@ export default function NewsPage() {
                     fill
                     style={{ objectFit: 'cover' }}
                   />
-                  <div className="absolute top-4 left-4 bg-[#c95d63] text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute top-4 left-4 bg-[#e74c3c] text-white px-3 py-1 rounded-full text-sm font-medium">
                     {post.category}
                   </div>
                 </div>
@@ -167,10 +167,10 @@ export default function NewsPage() {
                     <span>By {post.author}</span>
                   </div>
                   
-                  <h3 className="text-xl font-semibold mb-3 text-[#932327]">{post.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-[#c0392b]">{post.title}</h3>
                   <p className="text-gray-700 mb-4">{post.excerpt}</p>
                   
-                  <Link href={`/news/${post.id}`} className="inline-block font-medium text-[#c95d63] hover:text-[#932327] transition-colors">
+                  <Link href={`/news/${post.id}`} className="inline-block font-medium text-[#e74c3c] hover:text-[#c0392b] transition-colors">
                     Read More →
                   </Link>
                 </div>
@@ -183,7 +183,7 @@ export default function NewsPage() {
       {/* Upcoming Events */}
       <section className="py-16 bg-[#f8f3eb]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-6 text-center text-[#932327]">Upcoming Events</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-center text-[#c0392b]">Upcoming Events</h2>
           <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
             Join us at these upcoming events to support our cause, meet our team, and connect with our community.
           </p>
@@ -200,7 +200,7 @@ export default function NewsPage() {
                   />
                 </div>
                 <div className="md:w-3/5 p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-[#932327]">{event.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">{event.title}</h3>
                   
                   <div className="mb-3">
                     <div className="flex items-center text-gray-700 mb-1">
@@ -226,7 +226,7 @@ export default function NewsPage() {
                   
                   <p className="text-gray-700 text-sm mb-4">{event.description}</p>
                   
-                  <Link href={`/events/${event.id}`} className="inline-block bg-[#c95d63] hover:bg-[#932327] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">
+                  <Link href={`/events/${event.id}`} className="inline-block bg-[#e74c3c] hover:bg-[#c0392b] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">
                     Learn More & Register
                   </Link>
                 </div>
@@ -235,7 +235,7 @@ export default function NewsPage() {
           </div>
           
           <div className="mt-10 text-center">
-            <Link href="/events" className="inline-block border-2 border-[#932327] text-[#932327] hover:bg-[#932327] hover:text-white px-5 py-2 rounded-md font-medium transition-colors">
+            <Link href="/events" className="inline-block border-2 border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white px-5 py-2 rounded-md font-medium transition-colors">
               View All Events
             </Link>
           </div>
@@ -245,14 +245,14 @@ export default function NewsPage() {
       {/* All Blog Posts */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-6 text-center text-[#932327]">Latest News & Updates</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-center text-[#c0392b]">Latest News & Updates</h2>
           
           {/* Category Filter Tabs */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {categories.map((category, index) => (
               <button
                 key={index}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${index === 0 ? 'bg-[#932327] text-white' : 'bg-[#f8f3eb] text-[#932327] hover:bg-[#e6dfd3]'}`}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${index === 0 ? 'bg-[#c0392b] text-white' : 'bg-[#f8f3eb] text-[#c0392b] hover:bg-[#e6dfd3]'}`}
               >
                 {category}
               </button>
@@ -269,7 +269,7 @@ export default function NewsPage() {
                     fill
                     style={{ objectFit: 'cover' }}
                   />
-                  <div className="absolute top-4 left-4 bg-[#c95d63] text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute top-4 left-4 bg-[#e74c3c] text-white px-3 py-1 rounded-full text-sm font-medium">
                     {post.category}
                   </div>
                 </div>
@@ -278,14 +278,14 @@ export default function NewsPage() {
                     <span>{post.date}</span>
                   </div>
                   
-                  <h3 className="text-lg font-semibold mb-3 text-[#932327]">{post.title}</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-[#c0392b]">{post.title}</h3>
                   <p className="text-gray-700 mb-4 flex-grow">{post.excerpt}</p>
                   
                   <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-200">
                     <div className="text-sm text-gray-600">
                       By <span className="font-medium">{post.author}</span>
                     </div>
-                    <Link href={`/news/${post.id}`} className="inline-block font-medium text-[#c95d63] hover:text-[#932327] transition-colors">
+                    <Link href={`/news/${post.id}`} className="inline-block font-medium text-[#e74c3c] hover:text-[#c0392b] transition-colors">
                       Read More
                     </Link>
                   </div>
@@ -297,15 +297,15 @@ export default function NewsPage() {
           {/* Pagination */}
           <div className="flex justify-center mt-12">
             <div className="flex space-x-2">
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#932327] text-[#932327] hover:bg-[#932327] hover:text-white transition-colors">
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#932327] text-white">1</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#932327] text-[#932327] hover:bg-[#932327] hover:text-white transition-colors">2</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#932327] text-[#932327] hover:bg-[#932327] hover:text-white transition-colors">3</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#932327] text-[#932327] hover:bg-[#932327] hover:text-white transition-colors">
+              <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c0392b] text-white">1</button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors">2</button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors">3</button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -318,7 +318,7 @@ export default function NewsPage() {
       {/* More Events */}
       <section className="py-16 bg-[#f8f3eb]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#932327]">More Upcoming Events</h2>
+          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">More Upcoming Events</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {upcomingEvents.filter(event => !event.featured).map((event) => (
@@ -332,7 +332,7 @@ export default function NewsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-[#932327]">{event.title}</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-[#c0392b]">{event.title}</h3>
                   
                   <div className="mb-3">
                     <div className="flex items-center text-gray-700 mb-1 text-sm">
@@ -356,7 +356,7 @@ export default function NewsPage() {
                     </div>
                   </div>
                   
-                  <Link href={`/events/${event.id}`} className="inline-block bg-[#c95d63] hover:bg-[#932327] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors mt-2">
+                  <Link href={`/events/${event.id}`} className="inline-block bg-[#e74c3c] hover:bg-[#c0392b] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors mt-2">
                     Learn More
                   </Link>
                 </div>
@@ -367,7 +367,7 @@ export default function NewsPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 bg-[#932327] text-white">
+      <section className="py-16 bg-[#c0392b] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold mb-4">Stay Updated</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
@@ -381,7 +381,7 @@ export default function NewsPage() {
                 placeholder="Your email address"
                 className="flex-grow px-4 py-3 rounded-md text-gray-900 w-full md:w-auto"
               />
-              <button className="bg-[#c95d63] hover:bg-[#ad4b4f] text-white px-6 py-3 rounded-md font-medium transition-colors w-full md:w-auto">
+              <button className="bg-[#e74c3c] hover:bg-[#962d22] text-white px-6 py-3 rounded-md font-medium transition-colors w-full md:w-auto">
                 Subscribe
               </button>
             </div>

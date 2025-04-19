@@ -4,14 +4,14 @@
   --background: #ffffff;
   --foreground: #171717;
   
-  /* Theme colors extracted from logo */
-  --primary: #00c680; /* New green from logo */
-  --primary-light: #2edfaa;
-  --primary-dark: #00a269;
+  /* Theme colors - modern red palette */
+  --primary: #e74c3c; /* Modern red */
+  --primary-light: #f8a5a0;
+  --primary-dark: #c0392b;
   --secondary: #f8f3eb;
-  --accent: #00a269; /* Changed from red to darker green */
-  --accent-light: #00c680;
-  --accent-dark: #007a50;
+  --accent: #c0392b; /* Changed to darker red */
+  --accent-light: #e74c3c;
+  --accent-dark: #962d22;
   --neutral-dark: #333333;
   --neutral-light: #f4f4f4;
   --text-dark: #222222;
@@ -58,11 +58,11 @@ body {
 }
 
 .glass-primary {
-  @apply bg-[#00c680]/70 backdrop-blur-md;
+  @apply bg-[#e74c3c]/70 backdrop-blur-md;
 }
 
 .glass-accent {
-  @apply bg-[#00a269]/70 backdrop-blur-md;
+  @apply bg-[#c0392b]/70 backdrop-blur-md;
 }
 
 .glass-dark {
@@ -71,15 +71,15 @@ body {
 
 /* Button styles updated with new colors */
 .btn-primary {
-  @apply bg-[#00c680] text-white px-5 py-2 rounded-full hover:bg-[#00a269] transition-colors shadow-sm hover:shadow-md;
+  @apply bg-[#e74c3c] text-white px-5 py-2 rounded-full hover:bg-[#c0392b] transition-colors shadow-sm hover:shadow-md;
 }
 
 .btn-accent {
-  @apply bg-[#00a269] text-white px-5 py-2 rounded-full hover:bg-[#007a50] transition-colors shadow-sm hover:shadow-md;
+  @apply bg-[#c0392b] text-white px-5 py-2 rounded-full hover:bg-[#962d22] transition-colors shadow-sm hover:shadow-md;
 }
 
 .btn-secondary {
-  @apply bg-[#f8f3eb] text-[#222222] px-5 py-2 rounded-full hover:bg-[#e9e9e9] transition-colors border border-[#00c680] shadow-sm hover:shadow-md;
+  @apply bg-[#f8f3eb] text-[#222222] px-5 py-2 rounded-full hover:bg-[#e9e9e9] transition-colors border border-[#e74c3c] shadow-sm hover:shadow-md;
 }
 
 .btn-gradient {

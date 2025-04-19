@@ -79,7 +79,7 @@ export default function ImpactPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative bg-[#932327] py-20 text-white">
+      <section className="relative bg-[#c0392b] py-20 text-white">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Impact</h1>
@@ -102,13 +102,13 @@ export default function ImpactPage() {
       {/* Impact Metrics */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#932327]">Our Impact By The Numbers</h2>
+          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">Our Impact By The Numbers</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {impactMetrics.map((metric, index) => (
               <div key={index} className="bg-[#f8f3eb] rounded-lg p-6 text-center shadow-md transform transition-all duration-300 hover:scale-105">
-                <div className="text-4xl font-bold text-[#c95d63] mb-2">{metric.number}</div>
-                <div className="text-xl font-semibold text-[#932327] mb-2">{metric.label}</div>
+                <div className="text-4xl font-bold text-[#e74c3c] mb-2">{metric.number}</div>
+                <div className="text-xl font-semibold text-[#c0392b] mb-2">{metric.label}</div>
                 <p className="text-gray-700">{metric.description}</p>
               </div>
             ))}
@@ -119,7 +119,7 @@ export default function ImpactPage() {
       {/* Featured Success Story */}
       <section className="py-20 bg-[#f8f3eb]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#932327]">Featured Story</h2>
+          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">Featured Story</h2>
           
           <div className="max-w-5xl mx-auto">
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
@@ -134,27 +134,27 @@ export default function ImpactPage() {
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex items-center mb-4">
-                    <div className="text-[#c95d63] font-bold text-lg mr-2">Amina's Journey</div>
+                    <div className="text-[#e74c3c] font-bold text-lg mr-2">Amina's Journey</div>
                     <div className="text-gray-600 text-sm">Age 12</div>
                   </div>
                   
                   <div className="mb-6">
-                    <h3 className="text-lg font-semibold mb-2 text-[#932327]">Where She Started</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-[#c0392b]">Where She Started</h3>
                     <p className="text-gray-700 mb-4">
                       Amina lost both parents at the age of 5 and spent two years living on the streets of Kampala, where she faced hunger, illness, and danger every day. She would often go days without a proper meal and had no access to education or healthcare.
                     </p>
                     
-                    <h3 className="text-lg font-semibold mb-2 text-[#932327]">Where She Is Now</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-[#c0392b]">Where She Is Now</h3>
                     <p className="text-gray-700 mb-4">
                       Today, Amina lives in our children's home where she has access to education, healthcare, and a loving environment. She's one of the top students in her class, particularly excelling in science and mathematics. With proper nutrition and medical care, her health has improved dramatically. She dreams of becoming a doctor to help other children in need.
                     </p>
                   </div>
                   
-                  <blockquote className="italic text-gray-600 border-l-4 border-[#c95d63] pl-4 mb-6">
+                  <blockquote className="italic text-gray-600 border-l-4 border-[#e74c3c] pl-4 mb-6">
                     "I feel safe now. I have food every day, friends to play with, and teachers who believe in me. I want to study hard so I can help other children like me someday."
                   </blockquote>
                   
-                  <Link href="/donate" className="inline-block bg-[#c95d63] hover:bg-[#932327] text-white px-4 py-2 rounded-full font-medium transition-colors">
+                  <Link href="/donate" className="inline-block bg-[#e74c3c] hover:bg-[#c0392b] text-white px-4 py-2 rounded-full font-medium transition-colors">
                     Help Children Like Amina
                   </Link>
                 </div>
@@ -167,7 +167,7 @@ export default function ImpactPage() {
       {/* Success Stories Grid */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#932327]">Transformation Stories</h2>
+          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">Transformation Stories</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {successStories.slice(1).map((story) => (
@@ -182,19 +182,19 @@ export default function ImpactPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <h3 className="text-xl font-semibold text-[#932327] mr-2">{story.name}</h3>
+                    <h3 className="text-xl font-semibold text-[#c0392b] mr-2">{story.name}</h3>
                     <div className="text-gray-600 text-sm">Age {story.age}</div>
                   </div>
                   
                   <div className="mb-4">
-                    <h4 className="text-md font-semibold mb-1 text-[#c95d63]">Before</h4>
+                    <h4 className="text-md font-semibold mb-1 text-[#e74c3c]">Before</h4>
                     <p className="text-gray-700 mb-3">{story.beforeStory}</p>
                     
-                    <h4 className="text-md font-semibold mb-1 text-[#c95d63]">After</h4>
+                    <h4 className="text-md font-semibold mb-1 text-[#e74c3c]">After</h4>
                     <p className="text-gray-700">{story.afterStory}</p>
                   </div>
                   
-                  <blockquote className="italic text-gray-600 border-l-4 border-[#c95d63] pl-4 mt-4">
+                  <blockquote className="italic text-gray-600 border-l-4 border-[#e74c3c] pl-4 mt-4">
                     "{story.quote}"
                   </blockquote>
                 </div>
@@ -207,7 +207,7 @@ export default function ImpactPage() {
       {/* Letters from Children */}
       <section className="py-16 bg-[#f8f3eb]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#932327]">Letters From Our Children</h2>
+          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">Letters From Our Children</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md transform rotate-1">
@@ -263,7 +263,7 @@ export default function ImpactPage() {
       {/* Impact Map */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-6 text-center text-[#932327]">Our Reach</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-center text-[#c0392b]">Our Reach</h2>
           <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
             Our programs now span 12 districts throughout Uganda, with satellite centers in remote areas to reach the most vulnerable children.
           </p>
@@ -281,27 +281,27 @@ export default function ImpactPage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
               <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#932327]">Northern Region</div>
+                <div className="font-semibold text-[#c0392b]">Northern Region</div>
                 <p className="text-sm text-gray-700">8 centers, 120+ children</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#932327]">Central Region</div>
+                <div className="font-semibold text-[#c0392b]">Central Region</div>
                 <p className="text-sm text-gray-700">12 centers, 200+ children</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#932327]">Eastern Region</div>
+                <div className="font-semibold text-[#c0392b]">Eastern Region</div>
                 <p className="text-sm text-gray-700">10 centers, 160+ children</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#932327]">Western Region</div>
+                <div className="font-semibold text-[#c0392b]">Western Region</div>
                 <p className="text-sm text-gray-700">8 centers, 130+ children</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#932327]">Rural Outreach</div>
+                <div className="font-semibold text-[#c0392b]">Rural Outreach</div>
                 <p className="text-sm text-gray-700">15 satellite programs</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#932327]">Total Reach</div>
+                <div className="font-semibold text-[#c0392b]">Total Reach</div>
                 <p className="text-sm text-gray-700">38 centers, 600+ children</p>
               </div>
             </div>
@@ -313,13 +313,13 @@ export default function ImpactPage() {
       <section className="py-16 bg-[#f8f3eb]">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-4 text-[#932327]">Annual Impact Report</h2>
+            <h2 className="text-3xl font-semibold mb-4 text-[#c0392b]">Annual Impact Report</h2>
             <p className="text-gray-700 mb-8">
               For a complete overview of our programs, finances, and measurable impact, download our latest annual report.
             </p>
             
             <div className="flex justify-center">
-              <a href="#" className="inline-flex items-center bg-[#c95d63] hover:bg-[#932327] text-white px-6 py-3 rounded-md font-medium transition-colors">
+              <a href="#" className="inline-flex items-center bg-[#e74c3c] hover:bg-[#c0392b] text-white px-6 py-3 rounded-md font-medium transition-colors">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
@@ -331,7 +331,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-[#c95d63] text-white">
+      <section className="py-16 bg-[#e74c3c] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold mb-6 text-white">Help Us Create More Success Stories</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
@@ -339,10 +339,10 @@ export default function ImpactPage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/donate" className="bg-[#932327] hover:bg-[#7a1e22] text-white px-6 py-3 rounded-full font-medium transition-colors">
+            <Link href="/donate" className="bg-[#c0392b] hover:bg-[#962d22] text-white px-6 py-3 rounded-full font-medium transition-colors">
               Donate Now
             </Link>
-            <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#932327] px-6 py-3 rounded-full font-medium transition-colors">
+            <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#c0392b] px-6 py-3 rounded-full font-medium transition-colors">
               Get Involved
             </Link>
           </div>
