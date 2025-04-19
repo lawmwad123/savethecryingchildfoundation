@@ -3,6 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Theme colors extracted from logo */
+  --primary: #c95d63;
+  --primary-dark: #932327;
+  --secondary: #f8f3eb;
+  --accent: #e9d5c2;
+  --text-dark: #333333;
+  --text-light: #ffffff;
 }
 
 @theme inline {
@@ -22,5 +30,38 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+
+/* Additional utility classes */
+.btn-primary {
+  @apply bg-[#c95d63] text-white px-5 py-2 rounded-full hover:bg-[#932327] transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-[#f8f3eb] text-[#932327] px-5 py-2 rounded-full hover:bg-[#e9d5c2] transition-colors border border-[#c95d63];
+}
+
+.section-padding {
+  @apply py-12 md:py-20;
+}
+
+.container-padding {
+  @apply px-4 md:px-6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold text-[#333333];
+}
+
+h1 {
+  @apply text-3xl md:text-4xl lg:text-5xl;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl lg:text-4xl;
+}
+
+h3 {
+  @apply text-xl md:text-2xl;
 }

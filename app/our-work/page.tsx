@@ -1,0 +1,274 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function OurWorkPage() {
+  return (
+    <>
+      {/* Hero Banner */}
+      <section className="relative bg-[#932327] py-20 text-white">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Work</h1>
+            <p className="text-xl">Discover the impact we're making through our various programs and initiatives.</p>
+          </div>
+        </div>
+        <div className="absolute right-0 bottom-0 w-1/3 h-full hidden lg:block">
+          <div className="relative h-full w-full">
+            <Image 
+              src="https://static.vecteezy.com/system/resources/thumbnails/043/993/668/small/ai-generated-group-of-happy-friendly-children-having-fun-together-for-children-s-day-holiday-photo.jpg" 
+              alt="Children playing" 
+              fill
+              style={{ objectFit: 'cover' }}
+              className="rounded-l-3xl opacity-60"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Introduction */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Transforming Lives</h2>
+            <p className="text-lg mb-8">
+              Our comprehensive approach addresses the complex needs of vulnerable children. From immediate rescue and rehabilitation to long-term education and skills development, we create pathways for children to thrive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Street Outreach */}
+      <section id="street-outreach" className="py-16 bg-[#f8f3eb]">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <div className="relative h-[400px] w-full">
+                <Image 
+                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  alt="Street Outreach" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-lg shadow-xl"
+                />
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Street Outreach</h2>
+              <p className="mb-4 text-lg">
+                Our street outreach team works directly with children living on the streets of Kampala. We provide immediate relief in the form of:
+              </p>
+              <ul className="list-disc pl-6 mb-6 space-y-2 text-lg">
+                <li>Nutritious meals and clean water</li>
+                <li>Basic healthcare and first aid</li>
+                <li>Hygiene kits and clean clothing</li>
+                <li>Safe spaces for rest and recreation</li>
+                <li>Trust building and counseling</li>
+              </ul>
+              <p className="mb-4 text-lg">
+                Through consistent engagement, we build trust with children and introduce them to our rehabilitation programs, offering pathways off the street and into safety.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                  <div className="text-3xl font-bold text-[#c95d63]">50+</div>
+                  <div className="text-gray-600">Children reached weekly</div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                  <div className="text-3xl font-bold text-[#c95d63]">1,000+</div>
+                  <div className="text-gray-600">Meals distributed monthly</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Orphanage Program */}
+      <section id="orphanage" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
+            <div className="md:w-1/2">
+              <div className="relative h-[400px] w-full">
+                <Image 
+                  src="https://images.unsplash.com/photo-1594708767771-a5e9d3c154cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  alt="Orphanage Program" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-lg shadow-xl"
+                />
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Orphanage Program</h2>
+              <p className="mb-4 text-lg">
+                Our residential care program provides a loving home environment for children who have been abandoned, orphaned, or rescued from dangerous situations. We focus on:
+              </p>
+              <ul className="list-disc pl-6 mb-6 space-y-2 text-lg">
+                <li>Safe, family-style housing with dedicated caregivers</li>
+                <li>Comprehensive healthcare and psychological support</li>
+                <li>Quality education in partner schools</li>
+                <li>Life skills development and social integration</li>
+                <li>Pathways to family reunification when possible</li>
+              </ul>
+              <p className="mb-4 text-lg">
+                Our homes are designed to feel like family units, not institutions. Children receive individualized care and attention to heal from past trauma and develop healthy relationships.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <div className="bg-[#f8f3eb] p-4 rounded-lg shadow-md">
+                  <div className="text-3xl font-bold text-[#c95d63]">32</div>
+                  <div className="text-gray-600">Children in our care</div>
+                </div>
+                <div className="bg-[#f8f3eb] p-4 rounded-lg shadow-md">
+                  <div className="text-3xl font-bold text-[#c95d63]">100%</div>
+                  <div className="text-gray-600">School enrollment</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Outreach */}
+      <section id="community" className="py-16 bg-[#f8f3eb]">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <div className="relative h-[400px] w-full">
+                <Image 
+                  src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  alt="Community Outreach" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-lg shadow-xl"
+                />
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Community Outreach</h2>
+              <p className="mb-4 text-lg">
+                We believe in addressing the root causes of child vulnerability. Our community programs support families to prevent child abandonment and strengthen local support systems through:
+              </p>
+              <ul className="list-disc pl-6 mb-6 space-y-2 text-lg">
+                <li>Family support and parenting education</li>
+                <li>Nutrition programs for vulnerable households</li>
+                <li>Child protection awareness and education</li>
+                <li>Micro-grants for family income generation</li>
+                <li>Community resource centers and safe spaces</li>
+              </ul>
+              <p className="mb-4 text-lg">
+                By strengthening families and communities, we create sustainable solutions that keep children safe in family-based care whenever possible.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                  <div className="text-3xl font-bold text-[#c95d63]">75+</div>
+                  <div className="text-gray-600">Families supported</div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                  <div className="text-3xl font-bold text-[#c95d63]">3</div>
+                  <div className="text-gray-600">Community centers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vocational Training */}
+      <section id="vocational" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
+            <div className="md:w-1/2">
+              <div className="relative h-[400px] w-full">
+                <Image 
+                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  alt="Vocational Training" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-lg shadow-xl"
+                />
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Vocational Training</h2>
+              <p className="mb-4 text-lg">
+                For older youth in our programs, we provide practical skills training to ensure economic independence and a sustainable future. Our vocational training includes:
+              </p>
+              <ul className="list-disc pl-6 mb-6 space-y-2 text-lg">
+                <li>Tailoring and fashion design</li>
+                <li>Carpentry and woodworking</li>
+                <li>Computer skills and digital literacy</li>
+                <li>Agriculture and sustainable farming</li>
+                <li>Small business management and entrepreneurship</li>
+              </ul>
+              <p className="mb-4 text-lg">
+                Training is complemented with mentorship, job placement assistance, and small business startup support to ensure successful transitions to independent adulthood.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <div className="bg-[#f8f3eb] p-4 rounded-lg shadow-md">
+                  <div className="text-3xl font-bold text-[#c95d63]">45</div>
+                  <div className="text-gray-600">Youth trained annually</div>
+                </div>
+                <div className="bg-[#f8f3eb] p-4 rounded-lg shadow-md">
+                  <div className="text-3xl font-bold text-[#c95d63]">85%</div>
+                  <div className="text-gray-600">Employment rate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Success Story */}
+      <section className="py-16 bg-[#f8f3eb]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-semibold mb-8 text-center text-[#932327]">Success Story</h2>
+            
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="md:w-1/3">
+                  <div className="relative h-[250px] w-full rounded-lg overflow-hidden">
+                    <Image 
+                      src="https://randomuser.me/api/portraits/men/42.jpg" 
+                      alt="David's Story" 
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                </div>
+                <div className="md:w-2/3">
+                  <h3 className="text-2xl font-semibold mb-4 text-[#932327]">David's Journey</h3>
+                  <p className="italic text-gray-600 mb-6">
+                    "I was 12 years old when I first came to the foundation. I had been living on the streets for two years after losing my parents. I was hungry, scared, and had lost all hope."
+                  </p>
+                  <p className="mb-4">
+                    Through our comprehensive care program, David received shelter, education, and vocational training in carpentry. Today, at 23, he runs his own small furniture workshop and mentors other youth in our program.
+                  </p>
+                  <p className="font-semibold text-[#c95d63]">
+                    "The foundation didn't just give me food and shelter – they gave me a future."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-[#c95d63] text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold mb-6 text-white">Help Us Continue This Work</h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">Your support enables us to expand our programs and reach more vulnerable children. Join us in creating lasting change.</p>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/donate" className="bg-[#932327] hover:bg-[#7a1e22] text-white px-6 py-3 rounded-full font-medium transition-colors">
+              Donate Now
+            </Link>
+            <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#932327] px-6 py-3 rounded-full font-medium transition-colors">
+              Get Involved
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+} 
