@@ -10,22 +10,21 @@ export default function GetInvolvedPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative bg-[#c0392b] py-20 text-white">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+            alt="Volunteers"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Get Involved</h1>
-            <p className="text-xl">There are many ways to support our mission and make a difference in the lives of vulnerable children.</p>
-          </div>
-        </div>
-        <div className="absolute right-0 bottom-0 w-1/3 h-full hidden lg:block">
-          <div className="relative h-full w-full">
-            <Image 
-              src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
-              alt="Volunteers" 
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-l-3xl opacity-60"
-            />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Get Involved</h1>
+            <p className="text-xl text-white">There are many ways to support our mission and make a difference in the lives of vulnerable children.</p>
           </div>
         </div>
       </section>

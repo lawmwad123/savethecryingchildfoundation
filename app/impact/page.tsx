@@ -79,22 +79,21 @@ export default function ImpactPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative bg-[#c0392b] py-20 text-white">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+            alt="Children smiling"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Impact</h1>
-            <p className="text-xl">Real stories of transformation and the measurable difference we're making in children's lives.</p>
-          </div>
-        </div>
-        <div className="absolute right-0 bottom-0 w-1/3 h-full hidden lg:block">
-          <div className="relative h-full w-full">
-            <Image 
-              src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
-              alt="Children smiling" 
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-l-3xl opacity-60"
-            />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Impact</h1>
+            <p className="text-xl text-white">Real stories of transformation and the measurable difference we're making in children's lives.</p>
           </div>
         </div>
       </section>

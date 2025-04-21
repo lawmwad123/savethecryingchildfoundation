@@ -121,22 +121,21 @@ export default function NewsPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative bg-[#c0392b] py-20 text-white">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1560523159-6b681a1e1852?q=80&w=2036&auto=format&fit=crop&ixlib=rb-4.0.3"
+            alt="Children at an event"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">News & Events</h1>
-            <p className="text-xl">Stay updated with our latest news, success stories, and upcoming events. Join us in making a difference in the lives of vulnerable children.</p>
-          </div>
-        </div>
-        <div className="absolute right-0 bottom-0 w-1/3 h-full hidden lg:block">
-          <div className="relative h-full w-full">
-            <Image 
-              src="https://images.unsplash.com/photo-1560523159-6b681a1e1852?q=80&w=2036&auto=format&fit=crop&ixlib=rb-4.0.3" 
-              alt="Children at an event" 
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-l-3xl opacity-60"
-            />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">News & Events</h1>
+            <p className="text-xl text-white">Stay updated with our latest news, success stories, and upcoming events. Join us in making a difference in the lives of vulnerable children.</p>
           </div>
         </div>
       </section>

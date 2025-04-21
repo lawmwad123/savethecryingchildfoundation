@@ -5,22 +5,21 @@ export default function OurWorkPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-r from-[#c0392b] to-[#e74c3c] py-20 text-white">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://static.vecteezy.com/system/resources/thumbnails/043/993/668/small/ai-generated-group-of-happy-friendly-children-having-fun-together-for-children-s-day-holiday-photo.jpg"
+            alt="Children playing"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Work</h1>
-            <p className="text-xl">Discover the impact we're making through our various programs and initiatives.</p>
-          </div>
-        </div>
-        <div className="absolute right-0 bottom-0 w-1/3 h-full hidden lg:block">
-          <div className="relative h-full w-full">
-            <Image 
-              src="https://static.vecteezy.com/system/resources/thumbnails/043/993/668/small/ai-generated-group-of-happy-friendly-children-having-fun-together-for-children-s-day-holiday-photo.jpg" 
-              alt="Children playing" 
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-l-3xl opacity-60"
-            />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Work</h1>
+            <p className="text-xl text-white">Discover the impact we're making through our various programs and initiatives.</p>
           </div>
         </div>
       </section>
