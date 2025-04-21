@@ -3,6 +3,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
+
+const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const fadeIn = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.6 }
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -49,24 +72,34 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative h-[80vh] min-h-[600px] flex items-center">
+      <motion.section 
+        className="relative h-[60vh] min-h-[400px] flex items-center"
+        initial="initial"
+        animate="animate"
+        variants={fadeIn}
+      >
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3"
-            alt="Contact"
+            src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+            alt="Children smiling"
             fill
             style={{ objectFit: 'cover' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          className="container mx-auto px-4 relative z-10"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Contact Us</h1>
-            <p className="text-xl text-white">Have questions or want to learn more about our work? Get in touch with our team.</p>
+            <p className="text-xl text-white">Get in touch with us. We'd love to hear from you!</p>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

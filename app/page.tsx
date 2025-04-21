@@ -247,7 +247,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-white to-[#f8f3eb] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 border border-[#e74c3c]/10">
               <div className="h-48 relative">
                 <Image 
-                  src="https://images.unsplash.com/photo-1594708767771-a5e9d3c154cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  src="https://www.volunteerfdip.org/img/article/south-africa-orphanage-child-care-volunteer-program.jpg" 
                   alt="Orphanage Program" 
                   fill
                   className="object-cover"

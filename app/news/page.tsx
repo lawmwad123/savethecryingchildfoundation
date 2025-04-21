@@ -1,127 +1,157 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
+
+const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const fadeIn = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.6 }
+};
+
+// Sample blog posts
+const blogPosts = [
+  {
+    id: 1,
+    title: "New Children's Center Opens in Eastern Uganda",
+    date: "June 15, 2024",
+    author: "Sarah Nakato",
+    authorRole: "Program Director",
+    excerpt: "We're thrilled to announce the opening of our newest children's center in Jinja, which will serve over 100 vulnerable children in the region.",
+    image: "https://www.wellogyarchitects.com/wp-content/uploads/2022/01/DSCN0056-scaled.jpeg",
+    category: "Announcements",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Annual School Supplies Drive Exceeds Target",
+    date: "May 23, 2024",
+    author: "Daniel Ochen",
+    authorRole: "Community Outreach Coordinator",
+    excerpt: "Thanks to our generous donors, we collected over 5,000 notebooks, 3,000 textbooks, and countless other school supplies for children in our programs.",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3",
+    category: "Success Stories",
+    featured: false
+  },
+  {
+    id: 3,
+    title: "Healthcare Partnership Brings Medical Care to Remote Villages",
+    date: "April 30, 2024",
+    author: "Dr. Grace Mutumba",
+    authorRole: "Health Programs Coordinator",
+    excerpt: "Our new partnership with Doctors Without Borders will bring regular medical clinics to children in remote areas who previously had no access to healthcare.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    category: "Partnerships",
+    featured: false
+  },
+  {
+    id: 4,
+    title: "Alumni Success: Former Beneficiary Graduates Medical School",
+    date: "April 12, 2024",
+    author: "James Tumusiime",
+    authorRole: "Alumni Relations",
+    excerpt: "We're proud to celebrate Peter Okello, who came through our program as a child and has now graduated as a doctor, fulfilling his dream to give back to his community.",
+    image: "https://images.unsplash.com/photo-1627916607164-7b20241db935?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    category: "Success Stories",
+    featured: true
+  },
+  {
+    id: 5,
+    title: "Educational Workshop Series for Caregivers Launches Next Month",
+    date: "March 28, 2024",
+    author: "Elizabeth Nambi",
+    authorRole: "Education Coordinator",
+    excerpt: "Our new workshop series will provide foster parents and caregivers with resources and strategies to support children who have experienced trauma.",
+    image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    category: "Programs",
+    featured: false
+  },
+  {
+    id: 6,
+    title: "Corporate Partner Funds New Vocational Training Center",
+    date: "March 10, 2024",
+    author: "Robert Kyagulanyi",
+    authorRole: "Partnerships Director",
+    excerpt: "Thanks to a generous donation from Kampala Tech Solutions, we're building a new vocational training center that will teach marketable skills to older youth.",
+    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    category: "Partnerships",
+    featured: false
+  }
+];
+
+// Sample upcoming events
+const upcomingEvents = [
+  {
+    id: 1,
+    title: "Annual Charity Gala",
+    date: "August 20, 2024",
+    time: "7:00 PM",
+    location: "Serena Hotel, Kampala",
+    description: "Join us for an evening of celebration and fundraising as we honor our supporters and share stories of impact. Dinner, entertainment, and silent auction included.",
+    image: "https://images.unsplash.com/photo-1518082593638-b6e73b35d39a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Community Volunteer Day",
+    date: "July 15, 2024",
+    time: "9:00 AM - 4:00 PM",
+    location: "Main Children's Home, Kampala",
+    description: "Help us beautify our main campus with gardening, painting, and playground improvements. Lunch provided for all volunteers.",
+    image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    featured: false
+  },
+  {
+    id: 3,
+    title: "https://attenborougharts.com/wp-content/uploads/2022/01/IMG_0429-scaled.jpg",
+    date: "July 28, 2024",
+    time: "2:00 PM - 6:00 PM",
+    location: "National Art Gallery, Kampala",
+    description: "View and purchase artwork created by children in our programs. All proceeds go directly to our art therapy and educational programs.",
+    image: "https://attenborougharts.com/wp-content/uploads/2022/01/IMG_0429-scaled.jpg",
+    featured: true
+  },
+  {
+    id: 4,
+    title: "Back-to-School Drive",
+    date: "January 5-20, 2025",
+    time: "Drop-off hours: 9:00 AM - 5:00 PM",
+    location: "Multiple Locations",
+    description: "Help us collect school supplies, uniforms, and backpacks for children starting the new school year. See website for drop-off locations.",
+    image: "https://images.unsplash.com/photo-1551966775-a4ddc8df052b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    featured: false
+  }
+];
+
+const categories = ["All", "Announcements", "Success Stories", "Partnerships", "Programs"];
 
 export default function NewsPage() {
-  // Sample blog posts
-  const blogPosts = [
-    {
-      id: 1,
-      title: "New Children's Center Opens in Eastern Uganda",
-      date: "June 15, 2024",
-      author: "Sarah Nakato",
-      authorRole: "Program Director",
-      excerpt: "We're thrilled to announce the opening of our newest children's center in Jinja, which will serve over 100 vulnerable children in the region.",
-      image: "https://images.unsplash.com/photo-1564008157072-89db086fb034?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3",
-      category: "Announcements",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Annual School Supplies Drive Exceeds Target",
-      date: "May 23, 2024",
-      author: "Daniel Ochen",
-      authorRole: "Community Outreach Coordinator",
-      excerpt: "Thanks to our generous donors, we collected over 5,000 notebooks, 3,000 textbooks, and countless other school supplies for children in our programs.",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3",
-      category: "Success Stories",
-      featured: false
-    },
-    {
-      id: 3,
-      title: "Healthcare Partnership Brings Medical Care to Remote Villages",
-      date: "April 30, 2024",
-      author: "Dr. Grace Mutumba",
-      authorRole: "Health Programs Coordinator",
-      excerpt: "Our new partnership with Doctors Without Borders will bring regular medical clinics to children in remote areas who previously had no access to healthcare.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      category: "Partnerships",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Alumni Success: Former Beneficiary Graduates Medical School",
-      date: "April 12, 2024",
-      author: "James Tumusiime",
-      authorRole: "Alumni Relations",
-      excerpt: "We're proud to celebrate Peter Okello, who came through our program as a child and has now graduated as a doctor, fulfilling his dream to give back to his community.",
-      image: "https://images.unsplash.com/photo-1627916607164-7b20241db935?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      category: "Success Stories",
-      featured: true
-    },
-    {
-      id: 5,
-      title: "Educational Workshop Series for Caregivers Launches Next Month",
-      date: "March 28, 2024",
-      author: "Elizabeth Nambi",
-      authorRole: "Education Coordinator",
-      excerpt: "Our new workshop series will provide foster parents and caregivers with resources and strategies to support children who have experienced trauma.",
-      image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      category: "Programs",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Corporate Partner Funds New Vocational Training Center",
-      date: "March 10, 2024",
-      author: "Robert Kyagulanyi",
-      authorRole: "Partnerships Director",
-      excerpt: "Thanks to a generous donation from Kampala Tech Solutions, we're building a new vocational training center that will teach marketable skills to older youth.",
-      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      category: "Partnerships",
-      featured: false
-    }
-  ];
-
-  // Sample upcoming events
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Annual Charity Gala",
-      date: "August 20, 2024",
-      time: "7:00 PM",
-      location: "Serena Hotel, Kampala",
-      description: "Join us for an evening of celebration and fundraising as we honor our supporters and share stories of impact. Dinner, entertainment, and silent auction included.",
-      image: "https://images.unsplash.com/photo-1518082593638-b6e73b35d39a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Community Volunteer Day",
-      date: "July 15, 2024",
-      time: "9:00 AM - 4:00 PM",
-      location: "Main Children's Home, Kampala",
-      description: "Help us beautify our main campus with gardening, painting, and playground improvements. Lunch provided for all volunteers.",
-      image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      featured: false
-    },
-    {
-      id: 3,
-      title: "Children's Art Exhibition & Fundraiser",
-      date: "July 28, 2024",
-      time: "2:00 PM - 6:00 PM",
-      location: "National Art Gallery, Kampala",
-      description: "View and purchase artwork created by children in our programs. All proceeds go directly to our art therapy and educational programs.",
-      image: "https://images.unsplash.com/photo-1607688387751-c1d1b35faac4?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3",
-      featured: true
-    },
-    {
-      id: 4,
-      title: "Back-to-School Drive",
-      date: "January 5-20, 2025",
-      time: "Drop-off hours: 9:00 AM - 5:00 PM",
-      location: "Multiple Locations",
-      description: "Help us collect school supplies, uniforms, and backpacks for children starting the new school year. See website for drop-off locations.",
-      image: "https://images.unsplash.com/photo-1551966775-a4ddc8df052b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      featured: false
-    }
-  ];
-
-  const categories = ["All", "Announcements", "Success Stories", "Partnerships", "Programs"];
-
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative h-[80vh] min-h-[600px] flex items-center">
+      <motion.section 
+        className="relative h-[80vh] min-h-[600px] flex items-center"
+        initial="initial"
+        animate="animate"
+        variants={fadeIn}
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1560523159-6b681a1e1852?q=80&w=2036&auto=format&fit=crop&ixlib=rb-4.0.3"
@@ -132,22 +162,53 @@ export default function NewsPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          className="container mx-auto px-4 relative z-10"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">News & Events</h1>
             <p className="text-xl text-white">Stay updated with our latest news, success stories, and upcoming events. Join us in making a difference in the lives of vulnerable children.</p>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Featured Posts */}
-      <section className="py-16 bg-white">
+      <motion.section 
+        className="py-16 bg-white"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">Featured Stories</h2>
+          <motion.h2 
+            className="text-3xl font-semibold mb-12 text-center text-[#c0392b]"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Featured Stories
+          </motion.h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {blogPosts.filter(post => post.featured).map((post) => (
-              <div key={post.id} className="bg-[#f8f3eb] rounded-lg overflow-hidden shadow-md">
+              <motion.div 
+                key={post.id} 
+                className="bg-[#f8f3eb] rounded-lg overflow-hidden shadow-md"
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
                 <div className="relative h-[300px]">
                   <Image 
                     src={post.image} 
@@ -173,23 +234,55 @@ export default function NewsPage() {
                     Read More →
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Upcoming Events */}
-      <section className="py-16 bg-[#f8f3eb]">
+      <motion.section 
+        className="py-16 bg-[#f8f3eb]"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-6 text-center text-[#c0392b]">Upcoming Events</h2>
-          <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+          <motion.h2 
+            className="text-3xl font-semibold mb-6 text-center text-[#c0392b]"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Upcoming Events
+          </motion.h2>
+          <motion.p 
+            className="text-center text-gray-700 mb-12 max-w-3xl mx-auto"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Join us at these upcoming events to support our cause, meet our team, and connect with our community.
-          </p>
+          </motion.p>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {upcomingEvents.filter(event => event.featured).map((event) => (
-              <div key={event.id} className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row">
+              <motion.div 
+                key={event.id} 
+                className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row"
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
                 <div className="md:w-2/5 relative h-[200px] md:h-auto">
                   <Image 
                     src={event.image} 
@@ -229,38 +322,78 @@ export default function NewsPage() {
                     Learn More & Register
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
           
-          <div className="mt-10 text-center">
+          <motion.div 
+            className="mt-10 text-center"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <Link href="/events" className="inline-block border-2 border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white px-5 py-2 rounded-md font-medium transition-colors">
               View All Events
             </Link>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* All Blog Posts */}
-      <section className="py-16 bg-white">
+      <motion.section 
+        className="py-16 bg-white"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-6 text-center text-[#c0392b]">Latest News & Updates</h2>
+          <motion.h2 
+            className="text-3xl font-semibold mb-6 text-center text-[#c0392b]"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Latest News & Updates
+          </motion.h2>
           
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <motion.div 
+            className="flex flex-wrap justify-center gap-2 mb-12"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             {categories.map((category, index) => (
-              <button
+              <motion.button
                 key={index}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${index === 0 ? 'bg-[#c0392b] text-white' : 'bg-[#f8f3eb] text-[#c0392b] hover:bg-[#e6dfd3]'}`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {category}
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {blogPosts.map((post) => (
-              <div key={post.id} className="bg-[#f8f3eb] rounded-lg overflow-hidden shadow-md flex flex-col h-full">
+              <motion.div 
+                key={post.id} 
+                className="bg-[#f8f3eb] rounded-lg overflow-hidden shadow-md flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
                 <div className="relative h-[200px]">
                   <Image 
                     src={post.image} 
@@ -289,39 +422,97 @@ export default function NewsPage() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
           
           {/* Pagination */}
-          <div className="flex justify-center mt-12">
+          <motion.div 
+            className="flex justify-center mt-12"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <div className="flex space-x-2">
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors">
+              <motion.button 
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
-              </button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c0392b] text-white">1</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors">2</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors">3</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors">
+              </motion.button>
+              <motion.button 
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c0392b] text-white"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                1
+              </motion.button>
+              <motion.button 
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                2
+              </motion.button>
+              <motion.button 
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                3
+              </motion.button>
+              <motion.button 
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-[#c0392b] text-[#c0392b] hover:bg-[#c0392b] hover:text-white transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* More Events */}
-      <section className="py-16 bg-[#f8f3eb]">
+      <motion.section 
+        className="py-16 bg-[#f8f3eb]"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">More Upcoming Events</h2>
+          <motion.h2 
+            className="text-3xl font-semibold mb-12 text-center text-[#c0392b]"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            More Upcoming Events
+          </motion.h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {upcomingEvents.filter(event => !event.featured).map((event) => (
-              <div key={event.id} className="bg-white rounded-lg overflow-hidden shadow-md">
+              <motion.div 
+                key={event.id} 
+                className="bg-white rounded-lg overflow-hidden shadow-md"
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
                 <div className="relative h-[200px]">
                   <Image 
                     src={event.image} 
@@ -359,37 +550,75 @@ export default function NewsPage() {
                     Learn More
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 bg-[#c0392b] text-white">
+      <motion.section 
+        className="py-16 bg-[#c0392b] text-white"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold mb-4">Stay Updated</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
+          <motion.h2 
+            className="text-3xl font-semibold mb-4"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Stay Updated
+          </motion.h2>
+          <motion.p 
+            className="text-lg mb-8 max-w-2xl mx-auto"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Sign up for our newsletter to receive updates on our work, success stories, and upcoming events.
-          </p>
+          </motion.p>
           
-          <div className="max-w-md mx-auto">
+          <motion.div 
+            className="max-w-md mx-auto"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <div className="flex flex-wrap md:flex-nowrap gap-2">
-              <input
+              <motion.input
                 type="email"
                 placeholder="Your email address"
                 className="flex-grow px-4 py-3 rounded-md text-gray-900 w-full md:w-auto"
+                whileFocus={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
               />
-              <button className="bg-[#e74c3c] hover:bg-[#962d22] text-white px-6 py-3 rounded-md font-medium transition-colors w-full md:w-auto">
+              <motion.button 
+                className="bg-[#e74c3c] hover:bg-[#962d22] text-white px-6 py-3 rounded-md font-medium transition-colors w-full md:w-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Subscribe
-              </button>
+              </motion.button>
             </div>
-            <p className="text-sm mt-3 text-[#f8f3eb]">
+            <motion.p 
+              className="text-sm mt-3 text-[#f8f3eb]"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
               We respect your privacy. Unsubscribe at any time.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 } 

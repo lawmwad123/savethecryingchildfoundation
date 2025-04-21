@@ -3,6 +3,29 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
+
+const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const fadeIn = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.6 }
+};
 
 export default function GetInvolvedPage() {
   const [activeTab, setActiveTab] = useState('volunteer');
@@ -10,36 +33,66 @@ export default function GetInvolvedPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative h-[80vh] min-h-[600px] flex items-center">
+      <motion.section 
+        className="relative h-[60vh] min-h-[400px] flex items-center"
+        initial="initial"
+        animate="animate"
+        variants={fadeIn}
+      >
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
-            alt="Volunteers"
+            src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+            alt="Children smiling"
             fill
             style={{ objectFit: 'cover' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          className="container mx-auto px-4 relative z-10"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Get Involved</h1>
-            <p className="text-xl text-white">There are many ways to support our mission and make a difference in the lives of vulnerable children.</p>
+            <p className="text-xl text-white">Join us in making a difference in the lives of vulnerable children.</p>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Introduction */}
-      <section className="py-16 bg-white">
+      <motion.section 
+        className="py-16 bg-white"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-[#c0392b]">Join Our Community</h2>
-            <p className="text-lg mb-8">
-              Whether you can offer time, skills, resources, or financial support, there's a place for you in our mission. Together, we can create lasting change for children in need.
-            </p>
-          </div>
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-3xl font-semibold mb-6 text-[#c0392b]"
+              variants={fadeInUp}
+            >
+              Make a Difference
+            </motion.h2>
+            <motion.p 
+              className="text-lg mb-8"
+              variants={fadeInUp}
+            >
+              There are many ways you can support our mission to help vulnerable children. Whether through donations, volunteering, or spreading awareness, your involvement can create lasting change.
+            </motion.p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Tab Navigation */}
       <section className="bg-[#f8f3eb] pt-10">
