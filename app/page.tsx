@@ -2,10 +2,17 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [animatedStats, setAnimatedStats] = useState({
+    years: 0,
+    children: 0,
+    volunteers: 0
+  });
+  const statsAnimated = useRef(false);
+  const statsSection = useRef<HTMLDivElement>(null);
 
   const testimonials = [
     {
@@ -31,18 +38,113 @@ export default function Home() {
     }
   ];
 
+  // Auto-slide for testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTestimonial(prev => (prev + 1) % testimonials.length);
+    }, 6000);
+    
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  // Stats counter animation 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !statsAnimated.current) {
+          statsAnimated.current = true; // Prevent re-animation on scroll
+          
+          // Animate years
+          let start = 0;
+          const end = 10;
+          const duration = 2000; // 2 seconds
+          const frameDuration = 1000 / 60; // 60fps
+          const totalFrames = Math.round(duration / frameDuration);
+          let frame = 0;
+          
+          const animateYears = () => {
+            frame++;
+            const progress = frame / totalFrames;
+            const currentCount = Math.floor(progress * end);
+            
+            if (currentCount <= end) {
+              setAnimatedStats(prev => ({ ...prev, years: currentCount }));
+            }
+            
+            if (frame < totalFrames) {
+              requestAnimationFrame(animateYears);
+            }
+          };
+          
+          // Animate children
+          let startChildren = 0;
+          const endChildren = 200;
+          let frameChildren = 0;
+          
+          const animateChildren = () => {
+            frameChildren++;
+            const progress = frameChildren / totalFrames;
+            const currentCount = Math.floor(progress * endChildren);
+            
+            if (currentCount <= endChildren) {
+              setAnimatedStats(prev => ({ ...prev, children: currentCount }));
+            }
+            
+            if (frameChildren < totalFrames) {
+              requestAnimationFrame(animateChildren);
+            }
+          };
+          
+          // Animate volunteers
+          let startVolunteers = 0;
+          const endVolunteers = 500;
+          let frameVolunteers = 0;
+          
+          const animateVolunteers = () => {
+            frameVolunteers++;
+            const progress = frameVolunteers / totalFrames;
+            const currentCount = Math.floor(progress * endVolunteers);
+            
+            if (currentCount <= endVolunteers) {
+              setAnimatedStats(prev => ({ ...prev, volunteers: currentCount }));
+            }
+            
+            if (frameVolunteers < totalFrames) {
+              requestAnimationFrame(animateVolunteers);
+            }
+          };
+          
+          requestAnimationFrame(animateYears);
+          requestAnimationFrame(animateChildren);
+          requestAnimationFrame(animateVolunteers);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (statsSection.current) {
+      observer.observe(statsSection.current);
+    }
+    
+    return () => {
+      if (statsSection.current) {
+        observer.unobserve(statsSection.current);
+      }
+    };
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
       <section className="relative h-[80vh] min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0">
-          <Image
+        <Image
             src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
             alt="Happy children"
             fill
             style={{ objectFit: 'cover' }}
-            priority
-          />
+          priority
+        />
           <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
         </div>
         
@@ -68,7 +170,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
-              <Image
+            <Image
                 src="https://static.vecteezy.com/system/resources/thumbnails/043/993/668/small/ai-generated-group-of-happy-friendly-children-having-fun-together-for-children-s-day-holiday-photo.jpg" 
                 alt="Children playing" 
                 width={600} 
@@ -93,23 +195,23 @@ export default function Home() {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-20 bg-gradient-to-r from-[#c0392b] to-[#e74c3c] text-white">
+      <section ref={statsSection} className="py-20 bg-gradient-to-r from-[#c0392b] to-[#e74c3c] text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm shadow-lg">
-              <div className="text-5xl font-bold mb-2">10+</div>
+              <div className="text-5xl font-bold mb-2">{animatedStats.years}+</div>
               <div className="text-2xl font-medium text-white">Years of Impact</div>
               <p className="mt-3 text-white/80">Dedicated to improving children's lives since 2015</p>
             </div>
             
             <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm shadow-lg">
-              <div className="text-5xl font-bold mb-2">200+</div>
+              <div className="text-5xl font-bold mb-2">{animatedStats.children}+</div>
               <div className="text-2xl font-medium text-white">Children Helped</div>
               <p className="mt-3 text-white/80">Providing education, shelter, and healthcare</p>
             </div>
             
             <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm shadow-lg">
-              <div className="text-5xl font-bold mb-2">500+</div>
+              <div className="text-5xl font-bold mb-2">{animatedStats.volunteers}+</div>
               <div className="text-2xl font-medium text-white">Volunteers Worldwide</div>
               <p className="mt-3 text-white/80">Dedicated individuals making a difference</p>
             </div>
@@ -162,7 +264,7 @@ export default function Home() {
             
             <div className="bg-gradient-to-br from-white to-[#f8f3eb] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 border border-[#e74c3c]/10">
               <div className="h-48 relative">
-                <Image
+          <Image
                   src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
                   alt="Community Outreach" 
                   fill
@@ -180,7 +282,7 @@ export default function Home() {
             
             <div className="bg-gradient-to-br from-white to-[#f8f3eb] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 border border-[#e74c3c]/10">
               <div className="h-48 relative">
-                <Image
+          <Image
                   src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
                   alt="Vocational Training" 
                   fill
@@ -206,27 +308,34 @@ export default function Home() {
           
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-white rounded-xl shadow-lg p-8 border border-[#e74c3c]/10">
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="w-24 h-24 relative rounded-full overflow-hidden border-4 border-[#e74c3c]">
-                  <Image
-                    src={testimonials[activeTestimonial].image} 
-                    alt={testimonials[activeTestimonial].name} 
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                
-                <div className="flex-1">
-                  <svg className="w-10 h-10 text-[#e74c3c] opacity-20 mb-4" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 8v6a6 6 0 01-6 6H8a6 6 0 016 6v-6a6 6 0 01-6-6h6zm12 0v6a6 6 0 01-6 6h4a6 6 0 016 6v-6a6 6 0 01-6-6h6z" />
-                  </svg>
-                  <p className="text-lg mb-6 italic text-gray-700">{testimonials[activeTestimonial].quote}</p>
-                  <div>
-                    <div className="font-semibold text-[#c0392b]">{testimonials[activeTestimonial].name}</div>
-                    <div className="text-gray-500">{testimonials[activeTestimonial].role}</div>
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={testimonial.id}
+                  className={`flex flex-col md:flex-row gap-6 items-center transition-opacity duration-500 ${
+                    index === activeTestimonial ? 'opacity-100' : 'opacity-0 hidden'
+                  }`}
+                >
+                  <div className="w-24 h-24 relative rounded-full overflow-hidden border-4 border-[#e74c3c]">
+          <Image
+                      src={testimonial.image} 
+                      alt={testimonial.name} 
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <svg className="w-10 h-10 text-[#e74c3c] opacity-20 mb-4" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 8v6a6 6 0 01-6 6H8a6 6 0 016 6v-6a6 6 0 01-6-6h6zm12 0v6a6 6 0 01-6 6h4a6 6 0 016 6v-6a6 6 0 01-6-6h6z" />
+                    </svg>
+                    <p className="text-lg mb-6 italic text-gray-700">{testimonial.quote}</p>
+                    <div>
+                      <div className="font-semibold text-[#c0392b]">{testimonial.name}</div>
+                      <div className="text-gray-500">{testimonial.role}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
             
             <div className="flex justify-center space-x-2 mt-8">
@@ -284,7 +393,7 @@ export default function Home() {
               Get Involved
             </Link>
           </div>
-        </div>
+    </div>
       </section>
     </>
   );

@@ -5,7 +5,7 @@ export default function OurWorkPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative bg-[#932327] py-20 text-white">
+      <section className="relative bg-gradient-to-r from-[#c0392b] to-[#e74c3c] py-20 text-white">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Work</h1>
@@ -29,7 +29,7 @@ export default function OurWorkPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Transforming Lives</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-center text-[#c0392b]">Transforming Lives</h2>
             <p className="text-lg mb-8">
               Our comprehensive approach addresses the complex needs of vulnerable children. From immediate rescue and rehabilitation to long-term education and skills development, we create pathways for children to thrive.
             </p>
@@ -53,7 +53,7 @@ export default function OurWorkPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Street Outreach</h2>
+              <h2 className="text-3xl font-semibold mb-6 text-[#c0392b]">Street Outreach</h2>
               <p className="mb-4 text-lg">
                 Our street outreach team works directly with children living on the streets of Kampala. We provide immediate relief in the form of:
               </p>
@@ -69,11 +69,11 @@ export default function OurWorkPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="bg-white p-4 rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-[#c95d63]">50+</div>
+                  <div className="text-3xl font-bold text-[#e74c3c]">50+</div>
                   <div className="text-gray-600">Children reached weekly</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-[#c95d63]">1,000+</div>
+                  <div className="text-3xl font-bold text-[#e74c3c]">1,000+</div>
                   <div className="text-gray-600">Meals distributed monthly</div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function OurWorkPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Orphanage Program</h2>
+              <h2 className="text-3xl font-semibold mb-6 text-[#c0392b]">Orphanage Program</h2>
               <p className="mb-4 text-lg">
                 Our residential care program provides a loving home environment for children who have been abandoned, orphaned, or rescued from dangerous situations. We focus on:
               </p>
@@ -114,11 +114,11 @@ export default function OurWorkPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="bg-[#f8f3eb] p-4 rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-[#c95d63]">32</div>
+                  <div className="text-3xl font-bold text-[#e74c3c]">32</div>
                   <div className="text-gray-600">Children in our care</div>
                 </div>
                 <div className="bg-[#f8f3eb] p-4 rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-[#c95d63]">100%</div>
+                  <div className="text-3xl font-bold text-[#e74c3c]">100%</div>
                   <div className="text-gray-600">School enrollment</div>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function OurWorkPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Community Outreach</h2>
+              <h2 className="text-3xl font-semibold mb-6 text-[#c0392b]">Community Outreach</h2>
               <p className="mb-4 text-lg">
                 We believe in addressing the root causes of child vulnerability. Our community programs support families to prevent child abandonment and strengthen local support systems through:
               </p>
@@ -159,11 +159,11 @@ export default function OurWorkPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="bg-white p-4 rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-[#c95d63]">75+</div>
+                  <div className="text-3xl font-bold text-[#e74c3c]">75+</div>
                   <div className="text-gray-600">Families supported</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-[#c95d63]">3</div>
+                  <div className="text-3xl font-bold text-[#e74c3c]">3</div>
                   <div className="text-gray-600">Community centers</div>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default function OurWorkPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-semibold mb-6 text-[#932327]">Vocational Training</h2>
+              <h2 className="text-3xl font-semibold mb-6 text-[#c0392b]">Vocational Training</h2>
               <p className="mb-4 text-lg">
                 For older youth in our programs, we provide practical skills training to ensure economic independence and a sustainable future. Our vocational training includes:
               </p>
@@ -204,11 +204,11 @@ export default function OurWorkPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="bg-[#f8f3eb] p-4 rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-[#c95d63]">45</div>
+                  <div className="text-3xl font-bold text-[#e74c3c]">45</div>
                   <div className="text-gray-600">Youth trained annually</div>
                 </div>
                 <div className="bg-[#f8f3eb] p-4 rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-[#c95d63]">85%</div>
+                  <div className="text-3xl font-bold text-[#e74c3c]">85%</div>
                   <div className="text-gray-600">Employment rate</div>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function OurWorkPage() {
       <section className="py-16 bg-[#f8f3eb]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-8 text-center text-[#932327]">Success Story</h2>
+            <h2 className="text-3xl font-semibold mb-8 text-center text-[#c0392b]">Success Story</h2>
             
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -236,14 +236,14 @@ export default function OurWorkPage() {
                   </div>
                 </div>
                 <div className="md:w-2/3">
-                  <h3 className="text-2xl font-semibold mb-4 text-[#932327]">David's Journey</h3>
+                  <h3 className="text-2xl font-semibold mb-4 text-[#c0392b]">David's Journey</h3>
                   <p className="italic text-gray-600 mb-6">
                     "I was 12 years old when I first came to the foundation. I had been living on the streets for two years after losing my parents. I was hungry, scared, and had lost all hope."
                   </p>
                   <p className="mb-4">
                     Through our comprehensive care program, David received shelter, education, and vocational training in carpentry. Today, at 23, he runs his own small furniture workshop and mentors other youth in our program.
                   </p>
-                  <p className="font-semibold text-[#c95d63]">
+                  <p className="font-semibold text-[#e74c3c]">
                     "The foundation didn't just give me food and shelter – they gave me a future."
                   </p>
                 </div>
@@ -254,16 +254,16 @@ export default function OurWorkPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-[#c95d63] text-white">
+      <section className="py-16 bg-gradient-to-r from-[#c0392b] to-[#e74c3c] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold mb-6 text-white">Help Us Continue This Work</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">Your support enables us to expand our programs and reach more vulnerable children. Join us in creating lasting change.</p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/donate" className="bg-[#932327] hover:bg-[#7a1e22] text-white px-6 py-3 rounded-full font-medium transition-colors">
+            <Link href="/donate" className="bg-[#c0392b] hover:bg-[#962d22] text-white px-6 py-3 rounded-full font-medium transition-colors">
               Donate Now
             </Link>
-            <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#932327] px-6 py-3 rounded-full font-medium transition-colors">
+            <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#c0392b] px-6 py-3 rounded-full font-medium transition-colors">
               Get Involved
             </Link>
           </div>

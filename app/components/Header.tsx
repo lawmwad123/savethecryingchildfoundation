@@ -28,20 +28,24 @@ export default function Header() {
         : 'bg-white/80 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          <div className="relative w-[100px] h-[36px]">
-            <Image 
-              src="/weblogo.png" 
-              alt="Save the Crying Child Foundation" 
-              fill
-              priority
-              style={{ objectFit: 'contain' }}
-              className="h-auto"
-            />
-          </div>
-        </Link>
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="relative w-[32px] h-[32px] rounded-full overflow-hidden border-2 border-[#e74c3c]">
+              <Image 
+                src="/weblogo.png" 
+                alt="STCCF Logo" 
+                fill
+                priority
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[#c0392b] font-semibold text-sm leading-tight">Save the Crying Child</span>
+              <span className="text-gray-500 text-[10px] leading-tight">Foundation</span>
+            </div>
+          </Link>
+        </div>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           <NavLink href="/" label="Home" />
           <NavLink href="/about" label="About" />
@@ -61,7 +65,6 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Mobile menu button */}
         <button 
           className="md:hidden text-[#e74c3c]" 
           onClick={toggleMobileMenu}
@@ -79,10 +82,23 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md py-4 px-4 shadow-lg animate-fadeIn">
           <nav className="flex flex-col space-y-2">
+            <div className="flex justify-center mb-4 items-center gap-2">
+              <div className="relative w-[36px] h-[36px] rounded-full overflow-hidden border-2 border-[#e74c3c]">
+                <Image 
+                  src="/weblogo.png" 
+                  alt="STCCF Logo" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[#c0392b] font-semibold text-sm">Save the Crying Child</span>
+                <span className="text-gray-500 text-xs">Foundation</span>
+              </div>
+            </div>
             <MobileNavLink href="/" label="Home" onClick={() => setMobileMenuOpen(false)} />
             <MobileNavLink href="/about" label="About Us" onClick={() => setMobileMenuOpen(false)} />
             <MobileNavLink href="/our-work" label="Our Work" onClick={() => setMobileMenuOpen(false)} />
@@ -107,12 +123,11 @@ export default function Header() {
   );
 }
 
-// Helper components for cleaner code
 function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link 
       href={href} 
-      className="text-[#c0392b] font-medium px-3 py-2 text-sm hover:text-[#e74c3c] transition-colors rounded-md hover:bg-[#f8f3eb]/50"
+      className="text-gray-700 font-normal px-3 py-2 text-xs hover:text-[#e74c3c] transition-colors rounded-md hover:bg-[#f8f3eb]/50"
     >
       {label}
     </Link>
@@ -123,7 +138,7 @@ function MobileNavLink({ href, label, onClick }: { href: string; label: string; 
   return (
     <Link 
       href={href} 
-      className="text-[#c0392b] font-medium hover:text-[#e74c3c] transition-colors py-2 border-b border-[#c0392b]/10"
+      className="text-gray-700 font-normal hover:text-[#e74c3c] transition-colors py-2 border-b border-[#c0392b]/10 text-xs"
       onClick={onClick}
     >
       {label}
