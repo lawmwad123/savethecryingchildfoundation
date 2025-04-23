@@ -57,7 +57,7 @@ const blogPosts = [
     author: "Dr. Grace Mutumba",
     authorRole: "Health Programs Coordinator",
     excerpt: "Our new partnership with Doctors Without Borders will bring regular medical clinics to children in remote areas who previously had no access to healthcare.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    image: "/BlessingwhowasdumpedattheorphanagenowhasgainedlifeanddoingbetterwethankGodforthis.jpeg",
     category: "Partnerships",
     featured: false
   },
@@ -120,12 +120,12 @@ const upcomingEvents = [
   },
   {
     id: 3,
-    title: "https://attenborougharts.com/wp-content/uploads/2022/01/IMG_0429-scaled.jpg",
+    title: "Art Exhibition and Fundraiser",
     date: "July 28, 2024",
     time: "2:00 PM - 6:00 PM",
     location: "National Art Gallery, Kampala",
     description: "View and purchase artwork created by children in our programs. All proceeds go directly to our art therapy and educational programs.",
-    image: "https://attenborougharts.com/wp-content/uploads/2022/01/IMG_0429-scaled.jpg",
+    image: "/Petratheoldestatthehomedoingcertificateinnursing.jpeg",
     featured: true
   },
   {
@@ -135,7 +135,7 @@ const upcomingEvents = [
     time: "Drop-off hours: 9:00 AM - 5:00 PM",
     location: "Multiple Locations",
     description: "Help us collect school supplies, uniforms, and backpacks for children starting the new school year. See website for drop-off locations.",
-    image: "https://images.unsplash.com/photo-1551966775-a4ddc8df052b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    image: "/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials.jpeg",
     featured: false
   }
 ];
@@ -154,7 +154,7 @@ export default function NewsPage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1560523159-6b681a1e1852?q=80&w=2036&auto=format&fit=crop&ixlib=rb-4.0.3"
+            src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials.jpeg"
             alt="Children at an event"
             fill
             style={{ objectFit: 'cover' }}
@@ -204,7 +204,7 @@ export default function NewsPage() {
             {blogPosts.filter(post => post.featured).map((post) => (
               <motion.div 
                 key={post.id} 
-                className="bg-[#f8f3eb] rounded-lg overflow-hidden shadow-md"
+                className="bg-[#f8f3eb] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
                 variants={fadeInUp}
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
@@ -215,6 +215,7 @@ export default function NewsPage() {
                     alt={post.title} 
                     fill
                     style={{ objectFit: 'cover' }}
+                    className="hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4 bg-[#e74c3c] text-white px-3 py-1 rounded-full text-sm font-medium">
                     {post.category}
@@ -278,7 +279,7 @@ export default function NewsPage() {
             {upcomingEvents.filter(event => event.featured).map((event) => (
               <motion.div 
                 key={event.id} 
-                className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row"
+                className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row hover:shadow-xl transition-shadow duration-300"
                 variants={fadeInUp}
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
@@ -289,6 +290,7 @@ export default function NewsPage() {
                     alt={event.title} 
                     fill
                     style={{ objectFit: 'cover' }}
+                    className="hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="md:w-3/5 p-6">

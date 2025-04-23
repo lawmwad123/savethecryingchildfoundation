@@ -97,11 +97,11 @@ export default function AboutPage() {
         variants={fadeIn}
       >
         <div className="absolute inset-0 z-0">
-          <Image
+            <Image 
             src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3"
             alt="Children in classroom"
-            fill
-            style={{ objectFit: 'cover' }}
+              fill
+              style={{ objectFit: 'cover' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
@@ -151,11 +151,11 @@ export default function AboutPage() {
               className="relative h-[400px] w-full rounded-lg overflow-hidden mb-8"
               variants={fadeInUp}
             >
-              <Image
+                <Image 
                 src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
                 alt="Our early days"
-                fill
-                style={{ objectFit: 'cover' }}
+                  fill
+                  style={{ objectFit: 'cover' }}
               />
             </motion.div>
             <motion.p 
@@ -409,9 +409,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="relative h-[300px]">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
+                  <Image 
+                    src={member.image} 
+                    alt={member.name} 
                     fill
                     style={{ objectFit: 'cover' }}
                   />
@@ -424,7 +424,7 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
+              </div>
       </motion.section>
 
       {/* Our Impact */}
@@ -510,12 +510,12 @@ export default function AboutPage() {
             <motion.div variants={fadeInUp}>
               <Link href="/donate" className="bg-[#c0392b] hover:bg-[#962d22] text-white px-6 py-3 rounded-full font-medium transition-colors">
                 Donate Now
-              </Link>
+            </Link>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#c0392b] px-6 py-3 rounded-full font-medium transition-colors">
+            <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#c0392b] px-6 py-3 rounded-full font-medium transition-colors">
                 Get Involved
-              </Link>
+            </Link>
             </motion.div>
           </motion.div>
         </div>
