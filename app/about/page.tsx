@@ -29,28 +29,16 @@ const fadeIn = {
 export default function AboutPage() {
   const teamMembers = [
     {
-      name: "John Mutambo",
+      name: "Mukisa Hellen",
       role: "Founder & Executive Director",
       bio: "With over 20 years of experience in child welfare, John founded Save the Crying Children Foundation in 2015 after witnessing the struggles of street children in Kampala.",
-      image: "https://randomuser.me/api/portraits/men/32.jpg"
+      image: "/Mukisahellenfounderanddirector.jpeg"
     },
     {
-      name: "Sarah Nakato",
-      role: "Program Director",
-      bio: "Sarah oversees all our programs and ensures they deliver maximum impact. Her background in social work and psychology helps us create child-centered solutions.",
-      image: "https://randomuser.me/api/portraits/women/28.jpg"
-    },
-    {
-      name: "David Okello",
-      role: "Medical Coordinator",
-      bio: "As our medical coordinator, David ensures all children receive proper healthcare and nutrition. He's been with the foundation since 2017.",
-      image: "https://randomuser.me/api/portraits/men/77.jpg"
-    },
-    {
-      name: "Lucy Auma",
-      role: "Education Manager",
-      bio: "Lucy develops our educational programs and works with local schools to ensure our children receive quality education tailored to their needs.",
-      image: "https://randomuser.me/api/portraits/women/62.jpg"
+      name: "Dr. Kasule Joseph",
+      role: "Secretary & Director",
+      bio: "Dr. Kasule Joseph serves as the Secretary and Director of Save the Crying Child Foundation, leading our mission to support vulnerable children in Uganda.",
+      image: "/DrKasuleJosephsecretary.jpeg"
     }
   ];
 
@@ -394,7 +382,7 @@ export default function AboutPage() {
             Our Team
           </motion.h2>
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -408,12 +396,16 @@ export default function AboutPage() {
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative h-[300px]">
+                <div className="relative h-[400px] w-full">
                   <Image 
                     src={member.image} 
                     alt={member.name} 
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ 
+                      objectFit: 'cover',
+                      objectPosition: 'top center'
+                    }}
+                    className="rounded-t-lg"
                   />
                 </div>
                 <div className="p-6">
@@ -424,7 +416,7 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </motion.div>
-              </div>
+        </div>
       </motion.section>
 
       {/* Our Impact */}
