@@ -316,13 +316,13 @@ export default function ContactPage() {
             <div className="aspect-[16/9] relative">
               <Image
                 src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3"
-                alt="Map location of Save the Crying Child Foundation"
+                alt="Map location of Save the Crying Children Foundation"
                 fill
                 style={{ objectFit: 'cover' }}
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-white p-4 rounded-lg shadow-lg">
-                  <p className="font-semibold text-[#c0392b]">Save the Crying Child Foundation</p>
+                  <p className="font-semibold text-[#c0392b]">Save the Crying Children Foundation</p>
                   <p className="text-gray-700">123 Hope Street, Kampala, Uganda</p>
                 </div>
               </div>

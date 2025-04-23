@@ -40,7 +40,7 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-[#c0392b] font-semibold text-sm leading-tight">Save the Crying Child</span>
+              <span className="text-[#c0392b] font-semibold text-sm leading-tight">Save the Crying Children</span>
               <span className="text-gray-500 text-[10px] leading-tight">Foundation</span>
             </div>
           </Link>
@@ -95,7 +95,7 @@ export default function Header() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-[#c0392b] font-semibold text-sm">Save the Crying Child</span>
+                <span className="text-[#c0392b] font-semibold text-sm">Save the Crying Children</span>
                 <span className="text-gray-500 text-xs">Foundation</span>
               </div>
             </div>

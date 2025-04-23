@@ -181,7 +181,7 @@ export default function Home() {
             <div className="md:w-1/2">
               <h2 className="text-3xl font-semibold mb-4 gradient-text">Our Mission</h2>
               <p className="text-lg mb-6">
-                Since 2015, Save the Crying Child Foundation has been committed to rescuing, nurturing, and empowering vulnerable children across Uganda. We believe in creating sustainable solutions that transform lives and communities.
+                Since 2015, Save the Crying Children Foundation has been committed to rescuing, nurturing, and empowering vulnerable children across Uganda. We believe in creating sustainable solutions that transform lives and communities.
               </p>
               <Link href="/about" className="inline-flex items-center text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">
                 Read more about our story

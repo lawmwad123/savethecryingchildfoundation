@@ -31,7 +31,7 @@ export default function AboutPage() {
     {
       name: "John Mutambo",
       role: "Founder & Executive Director",
-      bio: "With over 20 years of experience in child welfare, John founded Save the Crying Child Foundation in 2015 after witnessing the struggles of street children in Kampala.",
+      bio: "With over 20 years of experience in child welfare, John founded Save the Crying Children Foundation in 2015 after witnessing the struggles of street children in Kampala.",
       image: "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
@@ -145,7 +145,7 @@ export default function AboutPage() {
               className="text-lg mb-8 text-center"
               variants={fadeInUp}
             >
-              Founded in 2010, Save the Crying Child Foundation began as a small community initiative in Kampala, Uganda. What started as a group of concerned citizens providing meals to street children has grown into a comprehensive organization serving hundreds of children annually.
+              Founded in 2010, Save the Crying Children Foundation began as a small community initiative in Kampala, Uganda. What started as a group of concerned citizens providing meals to street children has grown into a comprehensive organization serving hundreds of children annually.
             </motion.p>
             <motion.div 
               className="relative h-[400px] w-full rounded-lg overflow-hidden mb-8"

@@ -17,7 +17,7 @@ export default function Footer() {
               <div className="relative w-[150px] h-[50px]">
                 <Image 
                   src="/weblogo.png" 
-                  alt="Save the Crying Child Foundation"
+                  alt="Save the Crying Children Foundation"
                   fill
                   style={{ objectFit: 'contain' }}
                   className="h-auto"
@@ -115,7 +115,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center mt-8 text-sm opacity-90">
-          <p>© {new Date().getFullYear()} Save the Crying Child Foundation. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Save the Crying Children Foundation. All Rights Reserved.</p>
           <div className="flex justify-center space-x-4 mt-2">
             <Link href="/privacy-policy" className="hover:text-[#f8f3eb] transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-[#f8f3eb] transition-colors">Terms of Service</Link>

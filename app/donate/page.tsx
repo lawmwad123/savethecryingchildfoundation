@@ -459,7 +459,7 @@ export default function DonatePage() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p className="text-xl italic text-gray-700 mb-6">
-                "I started donating to Save the Crying Child Foundation three years ago, and it's been incredible to see the direct impact of my contributions. The foundation's transparency and dedication to these children's futures is truly inspiring."
+                "I started donating to Save the Crying Children Foundation three years ago, and it's been incredible to see the direct impact of my contributions. The foundation's transparency and dedication to these children's futures is truly inspiring."
               </p>
               <footer className="text-gray-600">
                 <p className="font-semibold text-[#c0392b]">James Wilson</p>
@@ -476,7 +476,7 @@ export default function DonatePage() {
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-2xl font-semibold mb-4 text-[#c0392b]">Tax Information</h3>
             <p className="text-gray-700 mb-2">
-              Save the Crying Child Foundation is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the extent allowed by law.
+              Save the Crying Children Foundation is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the extent allowed by law.
             </p>
             <p className="text-gray-700">
               Tax ID: 12-3456789

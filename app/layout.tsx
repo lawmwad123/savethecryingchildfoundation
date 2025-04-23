@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Save the Crying Child Foundation",
+  title: "Save the Crying Children Foundation",
   description: "Working towards a world where no child is born to cry",
 };
 
