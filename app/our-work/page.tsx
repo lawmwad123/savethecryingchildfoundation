@@ -37,11 +37,11 @@ export default function OurWorkPage() {
         variants={fadeIn}
       >
         <div className="absolute inset-0 z-0">
-          <Image
-            src="https://static.vecteezy.com/system/resources/thumbnails/043/993/668/small/ai-generated-group-of-happy-friendly-children-having-fun-together-for-children-s-day-holiday-photo.jpg"
-            alt="Children playing"
-            fill
-            style={{ objectFit: 'cover' }}
+            <Image 
+              src="https://static.vecteezy.com/system/resources/thumbnails/043/993/668/small/ai-generated-group-of-happy-friendly-children-having-fun-together-for-children-s-day-holiday-photo.jpg" 
+              alt="Children playing" 
+              fill
+              style={{ objectFit: 'cover' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
@@ -482,14 +482,14 @@ export default function OurWorkPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp}>
-              <Link href="/donate" className="bg-[#c0392b] hover:bg-[#962d22] text-white px-6 py-3 rounded-full font-medium transition-colors">
-                Donate Now
-              </Link>
+            <Link href="/donate" className="bg-[#c0392b] hover:bg-[#962d22] text-white px-6 py-3 rounded-full font-medium transition-colors">
+              Donate Now
+            </Link>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#c0392b] px-6 py-3 rounded-full font-medium transition-colors">
-                Get Involved
-              </Link>
+            <Link href="/get-involved" className="bg-white hover:bg-[#f8f3eb] text-[#c0392b] px-6 py-3 rounded-full font-medium transition-colors">
+              Get Involved
+            </Link>
             </motion.div>
           </motion.div>
         </div>

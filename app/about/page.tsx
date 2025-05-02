@@ -86,7 +86,7 @@ export default function AboutPage() {
       >
         <div className="absolute inset-0 z-0">
             <Image 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3"
+            src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/006.jpeg"
             alt="Children in classroom"
               fill
               style={{ objectFit: 'cover' }}
@@ -133,30 +133,39 @@ export default function AboutPage() {
               className="text-lg mb-8 text-center"
               variants={fadeInUp}
             >
-              Founded in 2010, Save the Crying Children Foundation began as a small community initiative in Kampala, Uganda. What started as a group of concerned citizens providing meals to street children has grown into a comprehensive organization serving hundreds of children annually.
+              Save the Crying Children Foundation was born from the personal experiences and compassionate vision of our founder, Mukisa Hellen. Having grown up in the slums herself, Hellen intimately understood the challenges and hardships faced by children living on the streets.
             </motion.p>
             <motion.div 
               className="relative h-[400px] w-full rounded-lg overflow-hidden mb-8"
               variants={fadeInUp}
             >
-                <Image 
-                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
-                alt="Our early days"
-                  fill
-                  style={{ objectFit: 'cover' }}
-              />
+              <video 
+                className="w-full h-full object-cover rounded-lg"
+                controls
+                muted
+                playsInline
+              >
+                <source src="/Christmaspartyforthechildrenathome/002.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </motion.div>
             <motion.p 
               className="text-lg mb-8"
               variants={fadeInUp}
             >
-              Our journey began when our founder, Sarah Nakato, encountered a group of children living on the streets of Kampala. Moved by their plight, she started by providing basic necessities and soon realized the need for a more comprehensive approach to address the root causes of child vulnerability.
+              The foundation's journey began with Hellen's determination to make a difference. She started by washing clothes to earn money, using her earnings to buy food for street children. This humble beginning was driven by her deep understanding of their struggles and her commitment to creating positive change in their lives.
+            </motion.p>
+            <motion.p 
+              className="text-lg mb-8"
+              variants={fadeInUp}
+            >
+              In 2017, a significant milestone was reached with the establishment of our children's home. This became a safe haven where vulnerable children could find not just shelter, but a true home. Here, they receive comprehensive care including nutritious meals, quality medical attention, proper clothing, education, and access to vocational studies.
             </motion.p>
             <motion.p 
               className="text-lg"
               variants={fadeInUp}
             >
-              Today, we operate multiple programs across Uganda, from street outreach to residential care, education, and vocational training. Our holistic approach ensures that every child in our care receives the support they need to thrive and build a better future.
+              Today, under Hellen's leadership, we continue to grow and expand our impact. We take full responsibility for each child in our care, ensuring they have everything they need to thrive and build a better future. Our work is a testament to how one person's compassion and dedication can transform countless lives.
             </motion.p>
           </motion.div>
         </div>

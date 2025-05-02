@@ -82,7 +82,7 @@ export default function ImpactPage() {
       <section className="relative h-[80vh] min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+            src="/Childrenfromthecommunitywhodidnthaveshoesandwereabletoreceivetheshoes/image.jpeg"
             alt="Children smiling"
             fill
             style={{ objectFit: 'cover' }}
@@ -183,36 +183,36 @@ export default function ImpactPage() {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 relative min-h-[300px] md:min-h-0">
                   <Image 
-                    src="https://images.unsplash.com/photo-1633966887768-64f9a867bdba?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                    alt="Amina's success story" 
+                    src="/Petratheoldestatthehomedoingcertificateinnursing.jpeg" 
+                    alt="Petra studying nursing" 
                     fill
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex items-center mb-4">
-                    <div className="text-[#e74c3c] font-bold text-lg mr-2">Amina's Journey</div>
-                    <div className="text-gray-600 text-sm">Age 12</div>
+                    <div className="text-[#e74c3c] font-bold text-lg mr-2">Petra's Journey</div>
+                    <div className="text-gray-600 text-sm">Nursing Student</div>
                   </div>
                   
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold mb-2 text-[#c0392b]">Where She Started</h3>
                     <p className="text-gray-700 mb-4">
-                      Amina lost both parents at the age of 5 and spent two years living on the streets of Kampala, where she faced hunger, illness, and danger every day. She would often go days without a proper meal and had no access to education or healthcare.
+                      Petra came to our home as a young girl, having faced numerous challenges in her early life. Despite these difficulties, she showed remarkable resilience and a strong desire to help others. She quickly became a role model for the younger children in our care.
                     </p>
                     
                     <h3 className="text-lg font-semibold mb-2 text-[#c0392b]">Where She Is Now</h3>
                     <p className="text-gray-700 mb-4">
-                      Today, Amina lives in our children's home where she has access to education, healthcare, and a loving environment. She's one of the top students in her class, particularly excelling in science and mathematics. With proper nutrition and medical care, her health has improved dramatically. She dreams of becoming a doctor to help other children in need.
+                      Today, Petra is pursuing her dream of becoming a nurse. She is currently enrolled in a nursing certificate program, where she is excelling in her studies. Her dedication to healthcare and helping others has made her an inspiration to everyone at the foundation. She often returns to mentor younger children and share her journey of perseverance and success.
                     </p>
                   </div>
                   
                   <blockquote className="italic text-gray-600 border-l-4 border-[#e74c3c] pl-4 mb-6">
-                    "I feel safe now. I have food every day, friends to play with, and teachers who believe in me. I want to study hard so I can help other children like me someday."
+                    "I want to use my experience to help others who are going through difficult times. Nursing is not just a career for me - it's a way to give back and make a difference in people's lives."
                   </blockquote>
                   
                   <Link href="/donate" className="inline-block bg-[#e74c3c] hover:bg-[#c0392b] text-white px-4 py-2 rounded-full font-medium transition-colors">
-                    Help Children Like Amina
+                    Support More Success Stories
                   </Link>
                 </div>
               </div>
