@@ -38,7 +38,7 @@ export default function OurWorkPage() {
       >
         <div className="absolute inset-0 z-0">
             <Image 
-              src="https://static.vecteezy.com/system/resources/thumbnails/043/993/668/small/ai-generated-group-of-happy-friendly-children-having-fun-together-for-children-s-day-holiday-photo.jpg" 
+              src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/007.jpeg" 
               alt="Children playing" 
               fill
               style={{ objectFit: 'cover' }}
