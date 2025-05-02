@@ -31,7 +31,7 @@ export default function AboutPage() {
     {
       name: "Mukisa Hellen",
       role: "Founder & Executive Director",
-      bio: "With over 20 years of experience in child welfare, John founded Save the Crying Children Foundation in 2015 after witnessing the struggles of street children in Kampala.",
+      bio: "With experience in child welfare, Hellen founded Save the Crying Children Foundation after witnessing the struggles of street children in Kampala.",
       image: "/Mukisahellenfounderanddirector.jpeg"
     },
     {

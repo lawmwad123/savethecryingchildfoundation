@@ -2,6 +2,23 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+// Animation variants
+const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
 
 export default function ImpactPage() {
   const successStories = [
@@ -98,61 +115,85 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* Transformation Story */}
+      {/* Blessing's Transformation */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-2 text-center text-[#c0392b]">Blessing's Transformation</h2>
-            <p className="text-lg text-gray-600 text-center mb-8">From being abandoned to finding hope and healing</p>
+          <motion.div 
+            className="max-w-4xl mx-auto"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-3xl font-semibold mb-6 text-center text-[#c0392b]"
+              variants={fadeInUp}
+            >
+              Blessing's Transformation
+            </motion.h2>
+            <motion.p 
+              className="text-lg mb-8 text-center"
+              variants={fadeInUp}
+            >
+              From abandonment to a bright future - see how your support has changed one child's life
+            </motion.p>
             
-            <div className="relative group">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Before Image */}
-                <div className="relative overflow-hidden rounded-lg shadow-xl transform transition-transform duration-300 group-hover:scale-[1.02]">
-                  <div className="relative h-[500px] w-full">
-                    <Image
-                      src="/Thesetwoimagescanbecomparedtoshowhowthischildtransformed/Before.jpeg"
-                      alt="Blessing before transformation"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      className="rounded-lg"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">Before</h3>
-                      <p className="text-white/90">When Blessing was first brought to our orphanage</p>
-                    </div>
-                  </div>
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+              variants={fadeInUp}
+            >
+              <motion.div 
+                className="relative h-[500px] rounded-lg overflow-hidden shadow-lg"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image 
+                  src="/Thesetwoimagescanbecomparedtoshowhowthischildtransformed/Before.jpeg" 
+                  alt="Blessing before transformation" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-lg"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <h3 className="text-white text-xl font-semibold">Before</h3>
+                  <p className="text-white/80">When Blessing was first found abandoned on the streets</p>
                 </div>
-
-                {/* After Image */}
-                <div className="relative overflow-hidden rounded-lg shadow-xl transform transition-transform duration-300 group-hover:scale-[1.02]">
-                  <div className="relative h-[500px] w-full">
-                    <Image
-                      src="/Thesetwoimagescanbecomparedtoshowhowthischildtransformed/After1.jpeg"
-                      alt="Blessing after transformation"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      className="rounded-lg"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">After</h3>
-                      <p className="text-white/90">Blessing now, thriving and full of life</p>
-                    </div>
-                  </div>
+              </motion.div>
+              
+              <motion.div 
+                className="relative h-[500px] rounded-lg overflow-hidden shadow-lg"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image 
+                  src="/Thesetwoimagescanbecomparedtoshowhowthischildtransformed/After1.jpeg" 
+                  alt="Blessing after transformation" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-lg"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <h3 className="text-white text-xl font-semibold">After</h3>
+                  <p className="text-white/80">Blessing today, thriving in our care</p>
                 </div>
-              </div>
-
-              {/* Story Text */}
-              <div className="mt-12 text-center max-w-3xl mx-auto">
-                <p className="text-lg text-gray-700 mb-6">
-                  "Blessing was abandoned at our orphanage in a state of severe malnutrition and emotional distress. Through our comprehensive care program, including proper nutrition, medical attention, and emotional support, Blessing has made an incredible transformation. Today, she is a vibrant, healthy child who loves to learn and play."
-                </p>
-                <p className="text-[#c0392b] font-semibold">- Save the Crying Children Foundation Team</p>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+            
+            <motion.div 
+              className="prose max-w-none"
+              variants={fadeInUp}
+            >
+              <p className="text-lg mb-4">
+                When Blessing was found abandoned on the streets, he was malnourished, scared, and had lost hope. Today, he is a different child - healthy, happy, and full of dreams for his future.
+              </p>
+              <p className="text-lg mb-4">
+                Through our comprehensive care program, Blessing has received proper nutrition, medical attention, and education. He has discovered his love for learning and is excelling in his studies. His transformation is a testament to what can be achieved when a child is given the love and support they deserve.
+              </p>
+              <blockquote className="border-l-4 border-[#c0392b] pl-4 italic text-lg">
+                "Blessing's journey reminds us why we do this work. Every child deserves a chance to thrive, and we're honored to be part of his story."
+              </blockquote>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -275,7 +316,7 @@ export default function ImpactPage() {
                 Dear Sponsors,<br /><br />
                 Thank you for helping me go to school. Before I came here, I never had books or nice clothes. Now I have my own uniform and I'm learning to read! My favorite subject is art. I drew a picture of a bird for you. When I grow up I want to be a teacher.<br /><br />
                 With love,<br />
-                Sarah (age 8)
+                Barbra (age 8)
               </p>
               <div className="flex justify-center">
                 <div className="relative h-[100px] w-[150px]">
@@ -298,7 +339,7 @@ export default function ImpactPage() {
                 Dear Foundation,<br /><br />
                 I'm writing to say thank you for giving me a home and family. Yesterday we celebrated my birthday with cake. It was the first time anyone remembered my birthday. I am doing well in mathematics and the teacher says I am very smart. I hope to make you proud.<br /><br />
                 Thank you,<br />
-                John (age 11)
+                Godfrey (age 11)
               </p>
             </div>
             
@@ -310,7 +351,7 @@ export default function ImpactPage() {
                 Dear Friends,<br /><br />
                 I passed my exams and will be going to secondary school next term! I never thought this would be possible. My dream is to become a nurse so I can help sick children. Thank you for believing in me even when I didn't believe in myself. I promise to study hard.<br /><br />
                 With gratitude,<br />
-                Mary (age 14)
+                Anitah (age 14)
               </p>
             </div>
           </div>
