@@ -98,6 +98,64 @@ export default function ImpactPage() {
         </div>
       </section>
 
+      {/* Transformation Story */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-semibold mb-2 text-center text-[#c0392b]">Blessing's Transformation</h2>
+            <p className="text-lg text-gray-600 text-center mb-8">From being abandoned to finding hope and healing</p>
+            
+            <div className="relative group">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Before Image */}
+                <div className="relative overflow-hidden rounded-lg shadow-xl transform transition-transform duration-300 group-hover:scale-[1.02]">
+                  <div className="relative h-[500px] w-full">
+                    <Image
+                      src="/Thesetwoimagescanbecomparedtoshowhowthischildtransformed/Before.jpeg"
+                      alt="Blessing before transformation"
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-2xl font-bold text-white mb-2">Before</h3>
+                      <p className="text-white/90">When Blessing was first brought to our orphanage</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* After Image */}
+                <div className="relative overflow-hidden rounded-lg shadow-xl transform transition-transform duration-300 group-hover:scale-[1.02]">
+                  <div className="relative h-[500px] w-full">
+                    <Image
+                      src="/Thesetwoimagescanbecomparedtoshowhowthischildtransformed/After1.jpeg"
+                      alt="Blessing after transformation"
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-2xl font-bold text-white mb-2">After</h3>
+                      <p className="text-white/90">Blessing now, thriving and full of life</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Story Text */}
+              <div className="mt-12 text-center max-w-3xl mx-auto">
+                <p className="text-lg text-gray-700 mb-6">
+                  "Blessing was abandoned at our orphanage in a state of severe malnutrition and emotional distress. Through our comprehensive care program, including proper nutrition, medical attention, and emotional support, Blessing has made an incredible transformation. Today, she is a vibrant, healthy child who loves to learn and play."
+                </p>
+                <p className="text-[#c0392b] font-semibold">- Save the Crying Children Foundation Team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Impact Metrics */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

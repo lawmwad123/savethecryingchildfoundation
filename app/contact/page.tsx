@@ -165,6 +165,8 @@ export default function ContactPage() {
                       <a href="https://wa.me/256754903778" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#e74c3c] transition-colors">
                         +256 754 903 778
                       </a>
+                      <br />
+                      <a href="https://wa.me/256754903778" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#e74c3c] transition-colors">+256 770 610 972</a>
                     </div>
                   </div>
                 </div>
@@ -318,17 +320,18 @@ export default function ContactPage() {
           <h2 className="text-2xl font-semibold mb-6 text-center text-[#c0392b]">Find Us</h2>
           <div className="max-w-6xl mx-auto rounded-lg overflow-hidden shadow-md">
             <div className="aspect-[16/9] relative">
-              <Image
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3"
-                alt="Map location of Save the Crying Children Foundation"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7500000000005!2d32.5216602!3d0.4285359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjUnNDIuNyJOIDMywrAzMScxOC4wIkU!5e0!3m2!1sen!2sug!4v1700000000000!5m2!1sen!2sug"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0"
+              ></iframe>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-white p-4 rounded-lg shadow-lg">
-                  <p className="font-semibold text-[#c0392b]">Save the Crying Children Foundation</p>
-                  <p className="text-gray-700">123 Hope Street, Kampala, Uganda</p>
-                </div>
+
               </div>
             </div>
           </div>
