@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
+import WhatPeopleSay from './components/WhatPeopleSay';
 
 export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -301,58 +302,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-gradient-to-br from-[#f8f3eb] to-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center gradient-text">What People Say</h2>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="relative bg-white rounded-xl shadow-lg p-8 border border-[#e74c3c]/10">
-              {testimonials.map((testimonial, index) => (
-                <div 
-                  key={testimonial.id}
-                  className={`flex flex-col md:flex-row gap-6 items-center transition-opacity duration-500 ${
-                    index === activeTestimonial ? 'opacity-100' : 'opacity-0 hidden'
-                  }`}
-                >
-                  <div className="w-24 h-24 relative rounded-full overflow-hidden border-4 border-[#e74c3c]">
-          <Image
-                      src={testimonial.image} 
-                      alt={testimonial.name} 
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  
-                  <div className="flex-1">
-                    <svg className="w-10 h-10 text-[#e74c3c] opacity-20 mb-4" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10 8v6a6 6 0 01-6 6H8a6 6 0 016 6v-6a6 6 0 01-6-6h6zm12 0v6a6 6 0 01-6 6h4a6 6 0 016 6v-6a6 6 0 01-6-6h6z" />
-                    </svg>
-                    <p className="text-lg mb-6 italic text-gray-700">{testimonial.quote}</p>
-                    <div>
-                      <div className="font-semibold text-[#c0392b]">{testimonial.name}</div>
-                      <div className="text-gray-500">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            <div className="flex justify-center space-x-2 mt-8">
-              {testimonials.map((_, index) => (
-                <button 
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === activeTestimonial ? 'bg-[#c0392b]' : 'bg-[#e9d5c2]'
-                  }`}
-                  aria-label={`View testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* What People Say */}
+      <WhatPeopleSay />
 
       {/* Newsletter */}
       <section className="py-16 bg-gradient-to-r from-[#c0392b] to-[#e74c3c] text-white">

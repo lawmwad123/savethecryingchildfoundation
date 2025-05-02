@@ -38,7 +38,7 @@ export default function OurWorkPage() {
       >
         <div className="absolute inset-0 z-0">
             <Image 
-              src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/007.jpeg" 
+              src="/WhatPeopleSay/18.jpeg" 
               alt="Children playing" 
               fill
               style={{ objectFit: 'cover' }}

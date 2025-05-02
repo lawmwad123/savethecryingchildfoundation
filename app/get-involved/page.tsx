@@ -41,7 +41,7 @@ export default function GetInvolvedPage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+            src="/WhatPeopleSay/17.jpeg"
             alt="Children smiling"
             fill
             style={{ objectFit: 'cover' }}
