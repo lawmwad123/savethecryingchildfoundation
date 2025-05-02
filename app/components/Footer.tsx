@@ -67,7 +67,6 @@ export default function Footer() {
                 </svg>
                 <div className="flex flex-col">
                   <a href="tel:+256706700533" className="hover:text-[#f8f3eb] transition-colors">+256 706 700 533</a>
-                  <a href="tel:+256770610972" className="hover:text-[#f8f3eb] transition-colors">+256 770 610 972</a>
                   <a href="tel:+256754903778" className="hover:text-[#f8f3eb] transition-colors">+256 754 903 778</a>
                   <a href="tel:+256786621644" className="hover:text-[#f8f3eb] transition-colors">+256 786 621 644</a>
                 </div>
@@ -79,6 +78,10 @@ export default function Footer() {
                 <a href="https://wa.me/256754903778" target="_blank" rel="noopener noreferrer" className="hover:text-[#f8f3eb] transition-colors">
                   WhatsApp: +256 754 903 778
                 </a>
+              </li>
+              <li className="flex items-start">
+              <a href="https://wa.me/256770610972" className="hover:text-[#f8f3eb] transition-colors">+256 770 610 972</a>
+
               </li>
             </ul>
           </div>
