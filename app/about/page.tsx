@@ -416,7 +416,7 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
+              </div>
       </motion.section>
 
       {/* Our Impact */}

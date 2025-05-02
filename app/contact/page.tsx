@@ -132,7 +132,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-[#c0392b] mb-1">Email Us</h3>
-                      <p className="text-gray-700 mb-1">info@savethecryingchild.org</p>
+                      <p className="text-gray-700 mb-1">Savethecryingchildrenfd@gmail.com</p>
                       <p className="text-gray-700 mb-1">donations@savethecryingchild.org</p>
                     </div>
                   </div>

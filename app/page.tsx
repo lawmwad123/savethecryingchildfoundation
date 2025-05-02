@@ -138,13 +138,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[80vh] min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0">
-        <Image
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+          <Image
+            src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/002.jpeg"
             alt="Happy children"
             fill
             style={{ objectFit: 'cover' }}
-          priority
-        />
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
         </div>
         
