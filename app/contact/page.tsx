@@ -119,7 +119,6 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-[#c0392b] mb-1">Our Location</h3>
-                      <p className="text-gray-700 mb-1">123 Hope Street</p>
                       <p className="text-gray-700 mb-1">Kampala, Uganda</p>
                     </div>
                   </div>
@@ -132,8 +131,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-[#c0392b] mb-1">Email Us</h3>
-                      <p className="text-gray-700 mb-1">Savethecryingchildrenfd@gmail.com</p>
-                      <p className="text-gray-700 mb-1">donations@savethecryingchild.org</p>
+                      <a href="mailto:Savethecryingchildrenfdn@gmail.com" className="text-gray-700 hover:text-[#e74c3c] transition-colors">
+                        Savethecryingchildrenfdn@gmail.com
+                      </a>
                     </div>
                   </div>
                   
@@ -145,8 +145,12 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-[#c0392b] mb-1">Call Us</h3>
-                      <p className="text-gray-700 mb-1">+256 123 456 789</p>
-                      <p className="text-gray-700 mb-1">+256 987 654 321</p>
+                      <div className="space-y-1">
+                        <a href="tel:+256706700533" className="block text-gray-700 hover:text-[#e74c3c] transition-colors">+256 706 700 533</a>
+                        <a href="tel:+256770610972" className="block text-gray-700 hover:text-[#e74c3c] transition-colors">+256 770 610 972</a>
+                        <a href="tel:+256754903778" className="block text-gray-700 hover:text-[#e74c3c] transition-colors">+256 754 903 778</a>
+                        <a href="tel:+256786621644" className="block text-gray-700 hover:text-[#e74c3c] transition-colors">+256 786 621 644</a>
+                      </div>
                     </div>
                   </div>
                   
@@ -157,10 +161,10 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-[#c0392b] mb-1">Open Hours</h3>
-                      <p className="text-gray-700 mb-1">Monday - Friday: 8:30 AM - 5:00 PM</p>
-                      <p className="text-gray-700 mb-1">Saturday: 9:00 AM - 1:00 PM</p>
-                      <p className="text-gray-700 mb-1">Sunday: Closed</p>
+                      <h3 className="text-lg font-semibold text-[#c0392b] mb-1">WhatsApp</h3>
+                      <a href="https://wa.me/256754903778" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#e74c3c] transition-colors">
+                        +256 754 903 778
+                      </a>
                     </div>
                   </div>
                 </div>
