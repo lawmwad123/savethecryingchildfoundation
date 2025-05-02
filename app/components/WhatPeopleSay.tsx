@@ -146,11 +146,11 @@ export default function WhatPeopleSay() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-16 bg-[#f8f3eb]">
+    <section className="py-8 md:py-16 bg-[#f8f3eb]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">Voices of Our Children</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold mb-8 md:mb-12 text-center text-[#c0392b]">Voices of Our Children</h2>
         
-        <div className="relative max-w-4xl mx-auto h-[200px]">
+        <div className="relative max-w-4xl mx-auto h-[280px] md:h-[200px]">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={currentIndex}
@@ -188,9 +188,9 @@ export default function WhatPeopleSay() {
                   setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
                 }
               }}
-              className="absolute top-0 left-0 w-full flex items-center gap-8 p-6 bg-white rounded-xl shadow-lg"
+              className="absolute top-0 left-0 w-full flex flex-col md:flex-row items-center gap-4 md:gap-8 p-4 md:p-6 bg-white rounded-xl shadow-lg"
             >
-              <div className="relative w-32 h-32 flex-shrink-0">
+              <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
                 <Image
                   src={currentTestimonial.image}
                   alt={currentTestimonial.name}
@@ -199,20 +199,20 @@ export default function WhatPeopleSay() {
                   className="rounded-full border-4 border-[#c0392b]/20"
                 />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 text-center md:text-left">
                 <div className="relative">
-                  <svg className="absolute -top-4 -left-4 w-8 h-8 text-[#c0392b]/20" fill="currentColor" viewBox="0 0 32 32">
+                  <svg className="absolute -top-4 -left-4 w-6 h-6 md:w-8 md:h-8 text-[#c0392b]/20" fill="currentColor" viewBox="0 0 32 32">
                     <path d="M10 8v6a6 6 0 01-6 6H8a6 6 0 016 6v-6a6 6 0 01-6-6h6zm12 0v6a6 6 0 01-6 6h4a6 6 0 016 6v-6a6 6 0 01-6-6h6z" />
                   </svg>
-                  <blockquote className="text-lg italic mb-4 text-gray-700 pl-8">
+                  <blockquote className="text-base md:text-lg italic mb-2 md:mb-4 text-gray-700 pl-4 md:pl-8">
                     "{currentTestimonial.quote}"
                   </blockquote>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="text-lg font-semibold text-[#c0392b]">
+                <div className="flex items-center justify-center md:justify-start gap-2">
+                  <div className="text-base md:text-lg font-semibold text-[#c0392b]">
                     {currentTestimonial.name}
                   </div>
-                  <div className="text-gray-500">
+                  <div className="text-sm md:text-base text-gray-500">
                     Age {currentTestimonial.age}
                   </div>
                 </div>
