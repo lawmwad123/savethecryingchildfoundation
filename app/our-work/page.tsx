@@ -106,7 +106,7 @@ export default function OurWorkPage() {
             >
               <div className="relative h-[400px] w-full">
                 <Image 
-                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/007.jpeg" 
                   alt="Street Outreach" 
                   fill
                   style={{ objectFit: 'cover' }}
@@ -183,7 +183,7 @@ export default function OurWorkPage() {
             >
               <div className="relative h-[400px] w-full">
                 <Image 
-                  src="https://www.volunteerfdip.org/img/article/south-africa-orphanage-child-care-volunteer-program.jpg" 
+                  src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/008.jpeg" 
                   alt="Orphanage Program" 
                   fill
                   style={{ objectFit: 'cover' }}
@@ -260,7 +260,7 @@ export default function OurWorkPage() {
             >
               <div className="relative h-[400px] w-full">
                 <Image 
-                  src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  src="/WhatPeopleSay/11.jpeg" 
                   alt="Community Outreach" 
                   fill
                   style={{ objectFit: 'cover' }}
@@ -337,11 +337,11 @@ export default function OurWorkPage() {
             >
               <div className="relative h-[400px] w-full">
                 <Image 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  src="/Petratheoldestatthehomedoingcertificateinnursing.jpeg" 
                   alt="Vocational Training" 
                   fill
-                  style={{ objectFit: 'cover' }}
-                  className="rounded-lg shadow-xl"
+                  style={{ objectFit: 'contain' }}
+                  className="rounded-lg"
                 />
               </div>
             </motion.div>
@@ -427,7 +427,7 @@ export default function OurWorkPage() {
                 >
                   <div className="relative h-[250px] w-full rounded-lg overflow-hidden">
                     <Image 
-                      src="https://randomuser.me/api/portraits/men/42.jpg" 
+                      src="/WhatPeopleSay/12.jpeg" 
                       alt="David's Story" 
                       fill
                       style={{ objectFit: 'cover' }}
