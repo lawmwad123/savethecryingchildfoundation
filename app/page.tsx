@@ -172,7 +172,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
             <Image
-                src="https://static.vecteezy.com/system/resources/thumbnails/043/993/668/small/ai-generated-group-of-happy-friendly-children-having-fun-together-for-children-s-day-holiday-photo.jpg" 
+                src="/selfie.jpeg" 
                 alt="Children playing" 
                 width={600} 
                 height={400} 
@@ -298,6 +298,33 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Volunteer Highlight */}
+      <section className="py-16 bg-[#f8f3eb]">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+          <div className="md:w-1/2 flex justify-center">
+            <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-lg border-4 border-[#c0392b]/20">
+              <Image
+                src="/volunteerone.jpeg"
+                alt="One of our dedicated volunteers"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="rounded-full"
+                priority
+              />
+            </div>
+          </div>
+          <div className="md:w-1/2 text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#c0392b]">Meet Our Volunteers</h2>
+            <p className="text-lg mb-4 text-gray-700">
+              Our volunteers are the heart of our mission. Their compassion, dedication, and hands-on support make it possible to reach and transform the lives of vulnerable children every day. Whether providing care, education, or simply a smile, our volunteers inspire hope and create lasting change in our community.
+            </p>
+            <p className="text-base text-gray-600">
+              Interested in joining our team? <Link href="/get-involved" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">Learn how you can help →</Link>
+            </p>
           </div>
         </div>
       </section>
