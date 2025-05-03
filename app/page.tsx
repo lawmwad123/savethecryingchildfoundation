@@ -223,23 +223,23 @@ export default function Home() {
       {/* Featured Programs */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-4 text-center gradient-text">Our Programs</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Comprehensive support for children at every stage of their journey from rescue to independence.</p>
+          <h2 className="text-3xl font-semibold mb-4 text-center gradient-text">Outreach to Schools</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Supporting education and providing essential scholastic materials to children in Buyende district schools.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-gradient-to-br from-white to-[#f8f3eb] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 border border-[#e74c3c]/10">
               <div className="h-48 relative">
                 <Image 
-                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                  alt="Street Outreach" 
+                  src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/003.jpeg" 
+                  alt="School Outreach" 
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">Street Outreach</h3>
-                <p className="text-gray-600 mb-4">Providing food, hygiene kits, and immediate care to street children.</p>
-                <Link href="/our-work#street-outreach" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">
+                <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">School Visits</h3>
+                <p className="text-gray-600 mb-4">Regular visits to schools to assess needs and provide support to students.</p>
+                <Link href="/our-work#outreach" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">
                   Learn more →
                 </Link>
               </div>
@@ -248,16 +248,16 @@ export default function Home() {
             <div className="bg-gradient-to-br from-white to-[#f8f3eb] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 border border-[#e74c3c]/10">
               <div className="h-48 relative">
                 <Image 
-                  src="https://www.volunteerfdip.org/img/article/south-africa-orphanage-child-care-volunteer-program.jpg" 
-                  alt="Orphanage Program" 
+                  src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/006.jpeg" 
+                  alt="Material Distribution" 
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">Orphanage Program</h3>
-                <p className="text-gray-600 mb-4">Creating a loving home environment with education and healthcare.</p>
-                <Link href="/our-work#orphanage" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">
+                <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">Material Distribution</h3>
+                <p className="text-gray-600 mb-4">Providing essential scholastic materials to support learning and education.</p>
+                <Link href="/our-work#materials" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">
                   Learn more →
                 </Link>
               </div>
@@ -265,35 +265,35 @@ export default function Home() {
             
             <div className="bg-gradient-to-br from-white to-[#f8f3eb] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 border border-[#e74c3c]/10">
               <div className="h-48 relative">
-          <Image
-                  src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                  alt="Community Outreach" 
+                <Image 
+                  src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/004.jpeg" 
+                  alt="Student Support" 
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">Community Outreach</h3>
-                <p className="text-gray-600 mb-4">Supporting local families with nutrition and child welfare services.</p>
+                <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">Student Support</h3>
+                <p className="text-gray-600 mb-4">Mentoring and supporting students to achieve their educational goals.</p>
+                <Link href="/our-work#support" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">
+                  Learn more →
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-white to-[#f8f3eb] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 border border-[#e74c3c]/10">
+              <div className="h-48 relative">
+                <Image 
+                  src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/001.jpeg" 
+                  alt="Community Engagement" 
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">Community Engagement</h3>
+                <p className="text-gray-600 mb-4">Working with local communities to strengthen educational support systems.</p>
                 <Link href="/our-work#community" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">
-                  Learn more →
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-white to-[#f8f3eb] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 border border-[#e74c3c]/10">
-              <div className="h-48 relative">
-          <Image
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                  alt="Vocational Training" 
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-[#c0392b]">Vocational Training</h3>
-                <p className="text-gray-600 mb-4">Teaching valuable skills in tailoring, carpentry, and computing.</p>
-                <Link href="/our-work#vocational" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">
                   Learn more →
                 </Link>
               </div>
