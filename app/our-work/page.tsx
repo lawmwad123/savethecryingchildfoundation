@@ -31,7 +31,7 @@ export default function OurWorkPage() {
     <>
       {/* Hero Banner */}
       <motion.section 
-        className="relative h-[80vh] min-h-[600px] flex items-center"
+        className="relative h-[50vh] md:h-[80vh] min-h-[400px] flex items-center"
         initial="initial"
         animate="animate"
         variants={fadeIn}
@@ -41,9 +41,11 @@ export default function OurWorkPage() {
               src="/WhatPeopleSay/18.jpeg" 
               alt="Children playing" 
               fill
-              style={{ objectFit: 'cover' }}
-            priority
-          />
+              sizes="100vw"
+              quality={90}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+              priority
+            />
           <div className="absolute inset-0 bg-gradient-to-r from-[#c0392b]/80 to-black/40"></div>
         </div>
         <motion.div 
@@ -104,12 +106,14 @@ export default function OurWorkPage() {
               className="md:w-1/2"
               variants={fadeInUp}
             >
-              <div className="relative h-[400px] w-full">
+              <div className="relative w-full aspect-[4/3]">
                 <Image 
                   src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/007.jpeg" 
                   alt="Street Outreach" 
                   fill
-                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
                   className="rounded-lg shadow-xl"
                 />
               </div>
@@ -181,12 +185,14 @@ export default function OurWorkPage() {
               className="md:w-1/2"
               variants={fadeInUp}
             >
-              <div className="relative h-[400px] w-full">
+              <div className="relative w-full aspect-[4/3]">
                 <Image 
                   src="/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/008.jpeg" 
                   alt="Orphanage Program" 
                   fill
-                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
                   className="rounded-lg shadow-xl"
                 />
               </div>
@@ -258,12 +264,14 @@ export default function OurWorkPage() {
               className="md:w-1/2"
               variants={fadeInUp}
             >
-              <div className="relative h-[400px] w-full">
+              <div className="relative w-full aspect-[4/3]">
                 <Image 
                   src="/WhatPeopleSay/11.jpeg" 
                   alt="Community Outreach" 
                   fill
-                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
                   className="rounded-lg shadow-xl"
                 />
               </div>
@@ -335,13 +343,15 @@ export default function OurWorkPage() {
               className="md:w-1/2"
               variants={fadeInUp}
             >
-              <div className="relative h-[400px] w-full">
+              <div className="relative w-full aspect-[4/3]">
                 <Image 
                   src="/Petratheoldestatthehomedoingcertificateinnursing.jpeg" 
                   alt="Vocational Training" 
                   fill
-                  style={{ objectFit: 'contain' }}
-                  className="rounded-lg"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  className="rounded-lg shadow-xl"
                 />
               </div>
             </motion.div>
@@ -425,12 +435,14 @@ export default function OurWorkPage() {
                   className="md:w-1/3"
                   variants={fadeInUp}
                 >
-                  <div className="relative h-[250px] w-full rounded-lg overflow-hidden">
+                  <div className="relative w-full aspect-square rounded-lg overflow-hidden">
                     <Image 
                       src="/WhatPeopleSay/12.jpeg" 
                       alt="David's Story" 
                       fill
-                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      quality={90}
+                      style={{ objectFit: 'cover', objectPosition: 'center' }}
                     />
                   </div>
                 </motion.div>

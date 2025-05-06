@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://savethecryingchildrenfoundation.vercel.app
+
+# Sitemaps
+Sitemap: https://savethecryingchildrenfoundation.vercel.app/sitemap.xml
+Sitemap: https://savethecryingchildrenfoundation.vercel.app/server-sitemap.xml
