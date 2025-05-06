@@ -26,7 +26,7 @@ export default function DonatePage() {
       <section className="relative h-[80vh] min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+            src="/WhatPeopleSay/18.jpeg"
             alt="Happy children"
             fill
             style={{ objectFit: 'cover' }}
