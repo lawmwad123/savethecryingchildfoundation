@@ -30,69 +30,47 @@ const fadeIn = {
 const blogPosts = [
   {
     id: 1,
-    title: "New Children's Center Opens in Eastern Uganda",
-    date: "June 15, 2024",
-    author: "Sarah Nakato",
+    title: "Success Story: Tonny's Journey from Street to Skilled Welder",
+    date: "June 2024",
+    author: "Program Director",
     authorRole: "Program Director",
-    excerpt: "We're thrilled to announce the opening of our newest children's center in Jinja, which will serve over 100 vulnerable children in the region.",
-    image: "https://www.wellogyarchitects.com/wp-content/uploads/2022/01/DSCN0056-scaled.jpeg",
-    category: "Announcements",
+    excerpt: "From a challenging past to becoming a skilled welder at age 20, Tonny's story exemplifies the transformative power of vocational training and support.",
+    image: "/tonny.jpeg",
+    category: "Success Stories",
     featured: true
   },
   {
     id: 2,
-    title: "Annual School Supplies Drive Exceeds Target",
-    date: "May 23, 2024",
-    author: "Daniel Ochen",
-    authorRole: "Community Outreach Coordinator",
-    excerpt: "Thanks to our generous donors, we collected over 5,000 notebooks, 3,000 textbooks, and countless other school supplies for children in our programs.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3",
-    category: "Success Stories",
-    featured: false
+    title: "Educational Support Transforms Lives in Buyende District",
+    date: "May 2024",
+    author: "Education Coordinator",
+    authorRole: "Education Coordinator",
+    excerpt: "Our recent outreach program in Buyende district has provided essential scholastic materials and support to children in need.",
+    image: "/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/003.jpeg",
+    category: "Programs",
+    featured: true
   },
   {
     id: 3,
-    title: "Healthcare Partnership Brings Medical Care to Remote Villages",
-    date: "April 30, 2024",
-    author: "Dr. Grace Mutumba",
-    authorRole: "Health Programs Coordinator",
-    excerpt: "Our new partnership with Doctors Without Borders will bring regular medical clinics to children in remote areas who previously had no access to healthcare.",
-    image: "/BlessingwhowasdumpedattheorphanagenowhasgainedlifeanddoingbetterwethankGodforthis.jpeg",
-    category: "Partnerships",
+    title: "Meet Tonny: A Story of Determination",
+    date: "April 2024",
+    author: "Youth Program Coordinator",
+    authorRole: "Youth Program Coordinator",
+    excerpt: "Discover how vocational training changed Tonny's life, providing him with skills and opportunities for a brighter future.",
+    image: "/alumni.jpeg",
+    category: "Alumni Stories",
     featured: false
   },
   {
     id: 4,
-    title: "Alumni Success: Former Beneficiary Graduates Medical School",
-    date: "April 12, 2024",
-    author: "James Tumusiime",
-    authorRole: "Alumni Relations",
-    excerpt: "We're proud to celebrate Peter Okello, who came through our program as a child and has now graduated as a doctor, fulfilling his dream to give back to his community.",
-    image: "https://images.unsplash.com/photo-1627916607164-7b20241db935?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    category: "Success Stories",
-    featured: true
-  },
-  {
-    id: 5,
-    title: "Educational Workshop Series for Caregivers Launches Next Month",
-    date: "March 28, 2024",
-    author: "Elizabeth Nambi",
-    authorRole: "Education Coordinator",
-    excerpt: "Our new workshop series will provide foster parents and caregivers with resources and strategies to support children who have experienced trauma.",
-    image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    title: "Empowering Girls Through Education",
+    date: "April 2024",
+    author: "Girls Program Coordinator",
+    authorRole: "Program Coordinator",
+    excerpt: "Our girls' education initiative continues to break barriers and create opportunities for young women in our community.",
+    image: "/somegirls.jpeg",
     category: "Programs",
-    featured: false
-  },
-  {
-    id: 6,
-    title: "Corporate Partner Funds New Vocational Training Center",
-    date: "March 10, 2024",
-    author: "Robert Kyagulanyi",
-    authorRole: "Partnerships Director",
-    excerpt: "Thanks to a generous donation from Kampala Tech Solutions, we're building a new vocational training center that will teach marketable skills to older youth.",
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    category: "Partnerships",
-    featured: false
+    featured: true
   }
 ];
 
@@ -100,47 +78,27 @@ const blogPosts = [
 const upcomingEvents = [
   {
     id: 1,
-    title: "Annual Charity Gala",
-    date: "August 20, 2024",
-    time: "7:00 PM",
-    location: "Serena Hotel, Kampala",
-    description: "Join us for an evening of celebration and fundraising as we honor our supporters and share stories of impact. Dinner, entertainment, and silent auction included.",
-    image: "https://images.unsplash.com/photo-1518082593638-b6e73b35d39a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    title: "Vocational Skills Training Workshop",
+    date: "July 2024",
+    time: "9:00 AM - 4:00 PM",
+    location: "Training Center, Kampala",
+    description: "Join us for a hands-on workshop where successful alumni like Tonny will share their experiences and inspire the next generation of skilled workers.",
+    image: "/tonny.jpeg",
     featured: true
   },
   {
     id: 2,
-    title: "Community Volunteer Day",
-    date: "July 15, 2024",
-    time: "9:00 AM - 4:00 PM",
-    location: "Main Children's Home, Kampala",
-    description: "Help us beautify our main campus with gardening, painting, and playground improvements. Lunch provided for all volunteers.",
-    image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    featured: false
-  },
-  {
-    id: 3,
-    title: "Art Exhibition and Fundraiser",
-    date: "July 28, 2024",
-    time: "2:00 PM - 6:00 PM",
-    location: "National Art Gallery, Kampala",
-    description: "View and purchase artwork created by children in our programs. All proceeds go directly to our art therapy and educational programs.",
-    image: "/Petratheoldestatthehomedoingcertificateinnursing.jpeg",
+    title: "Community Outreach Day",
+    date: "August 2024",
+    time: "9:00 AM - 3:00 PM",
+    location: "Buyende District",
+    description: "Help us distribute scholastic materials and support children in the Buyende district schools.",
+    image: "/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials/001.jpeg",
     featured: true
-  },
-  {
-    id: 4,
-    title: "Back-to-School Drive",
-    date: "January 5-20, 2025",
-    time: "Drop-off hours: 9:00 AM - 5:00 PM",
-    location: "Multiple Locations",
-    description: "Help us collect school supplies, uniforms, and backpacks for children starting the new school year. See website for drop-off locations.",
-    image: "/OutreachetoschoolinBuyendedistrictchildrenwereabletorecievescholasticmaterials.jpeg",
-    featured: false
   }
 ];
 
-const categories = ["All", "Announcements", "Success Stories", "Partnerships", "Programs"];
+const categories = ["All", "Success Stories", "Programs", "Alumni Stories"];
 
 export default function NewsPage() {
   return (
@@ -214,7 +172,7 @@ export default function NewsPage() {
                     src={post.image} 
                     alt={post.title} 
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', objectPosition: 'top' }}
                     className="hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4 bg-[#e74c3c] text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -401,7 +359,7 @@ export default function NewsPage() {
                     src={post.image} 
                     alt={post.title} 
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', objectPosition: 'top' }}
                   />
                   <div className="absolute top-4 left-4 bg-[#e74c3c] text-white px-3 py-1 rounded-full text-sm font-medium">
                     {post.category}

@@ -304,27 +304,53 @@ export default function Home() {
 
       {/* Volunteer Highlight */}
       <section className="py-16 bg-[#f8f3eb]">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-          <div className="md:w-1/2 flex justify-center">
-            <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-lg border-4 border-[#c0392b]/20">
-              <Image
-                src="/volunteerone.jpeg"
-                alt="One of our dedicated volunteers"
-                fill
-                style={{ objectFit: 'cover' }}
-                className="rounded-full"
-                priority
-              />
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-[#c0392b]">Meet Our Volunteers</h2>
+          
+          {/* Individual volunteer */}
+          <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <div className="md:w-1/2 flex justify-center">
+              <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-lg border-4 border-[#c0392b]/20">
+                <Image
+                  src="/volunteerone.jpeg"
+                  alt="One of our dedicated volunteers"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-full"
+                  priority
+                />
+              </div>
+            </div>
+            <div className="md:w-1/2 text-center md:text-left">
+              <p className="text-lg mb-4 text-gray-700">
+                Our volunteers are the heart of our mission. Their compassion, dedication, and hands-on support make it possible to reach and transform the lives of vulnerable children every day.
+              </p>
+              <p className="text-base text-gray-600">
+                Interested in joining our team? <Link href="/get-involved" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">Learn how you can help →</Link>
+              </p>
             </div>
           </div>
-          <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#c0392b]">Meet Our Volunteers</h2>
-            <p className="text-lg mb-4 text-gray-700">
-              Our volunteers are the heart of our mission. Their compassion, dedication, and hands-on support make it possible to reach and transform the lives of vulnerable children every day. Whether providing care, education, or simply a smile, our volunteers inspire hope and create lasting change in our community.
-            </p>
-            <p className="text-base text-gray-600">
-              Interested in joining our team? <Link href="/get-involved" className="text-[#e74c3c] font-medium hover:text-[#c0392b] transition-colors">Learn how you can help →</Link>
-            </p>
+          
+          {/* Volunteer team */}
+          <div className="flex flex-col md:flex-row-reverse items-center gap-8">
+            <div className="md:w-1/2">
+              <Image
+                src="/volunteers.jpeg"
+                alt="Our volunteer team at work"
+                width={600}
+                height={450}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="md:w-1/2 text-center md:text-left">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-[#c0392b]">Working Together to Make a Difference</h3>
+              <p className="text-base mb-4 text-gray-700">
+                Whether providing educational support, organizing community events, or offering emotional care, our volunteers work as a team to create lasting positive change in children's lives.
+              </p>
+              <p className="text-base text-gray-700">
+                Each volunteer brings unique skills and perspectives, but they all share a common commitment to improving the welfare of vulnerable children in our community.
+              </p>
+            </div>
           </div>
         </div>
       </section>
