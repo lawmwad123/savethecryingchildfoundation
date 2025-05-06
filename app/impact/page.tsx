@@ -262,46 +262,6 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* Success Stories Grid */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-[#c0392b]">Transformation Stories</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {successStories.slice(1).map((story) => (
-              <div key={story.id} className="bg-[#f8f3eb] rounded-lg overflow-hidden shadow-md">
-                <div className="relative h-[300px]">
-                  <Image 
-                    src={story.image} 
-                    alt={`${story.name}'s success story`} 
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    <h3 className="text-xl font-semibold text-[#c0392b] mr-2">{story.name}</h3>
-                    <div className="text-gray-600 text-sm">Age {story.age}</div>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <h4 className="text-md font-semibold mb-1 text-[#e74c3c]">Before</h4>
-                    <p className="text-gray-700 mb-3">{story.beforeStory}</p>
-                    
-                    <h4 className="text-md font-semibold mb-1 text-[#e74c3c]">After</h4>
-                    <p className="text-gray-700">{story.afterStory}</p>
-                  </div>
-                  
-                  <blockquote className="italic text-gray-600 border-l-4 border-[#e74c3c] pl-4 mt-4">
-                    "{story.quote}"
-                  </blockquote>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Letters from Children */}
       <section className="py-16 bg-[#f8f3eb]">
         <div className="container mx-auto px-4">
@@ -353,55 +313,6 @@ export default function ImpactPage() {
                 With gratitude,<br />
                 Anitah (age 14)
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Map */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-6 text-center text-[#c0392b]">Our Reach</h2>
-          <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
-            Our programs now span 12 districts throughout Uganda, with satellite centers in remote areas to reach the most vulnerable children.
-          </p>
-          
-          <div className="max-w-4xl mx-auto bg-[#f8f3eb] rounded-lg p-6 md:p-10 shadow-lg">
-            <div className="aspect-[16/9] relative">
-              <Image 
-                src="https://images.unsplash.com/photo-1552838354-5bf906956c81?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                alt="Map of Uganda showing program locations" 
-                fill
-                style={{ objectFit: 'cover' }}
-                className="rounded-lg"
-              />
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#c0392b]">Northern Region</div>
-                <p className="text-sm text-gray-700">8 centers, 120+ children</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#c0392b]">Central Region</div>
-                <p className="text-sm text-gray-700">12 centers, 200+ children</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#c0392b]">Eastern Region</div>
-                <p className="text-sm text-gray-700">10 centers, 160+ children</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#c0392b]">Western Region</div>
-                <p className="text-sm text-gray-700">8 centers, 130+ children</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#c0392b]">Rural Outreach</div>
-                <p className="text-sm text-gray-700">15 satellite programs</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="font-semibold text-[#c0392b]">Total Reach</div>
-                <p className="text-sm text-gray-700">38 centers, 600+ children</p>
-              </div>
             </div>
           </div>
         </div>
