@@ -44,407 +44,125 @@ export default function DonatePage() {
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-12">
-            {/* Donation Form */}
-            <div className="lg:w-7/12">
-              <h2 className="text-3xl font-semibold mb-8 text-[#c0392b]">Make a Donation</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-semibold mb-8 text-center text-[#c0392b]">Support Our Mission</h2>
+            
+            {/* Contact Information Box */}
+            <div className="bg-white p-8 rounded-lg shadow-lg mb-12 border-t-4 border-[#c0392b]">
+              <h3 className="text-2xl font-semibold mb-6 text-[#c0392b] text-center">Get in Touch to Donate</h3>
+              <p className="text-lg text-gray-700 mb-8 text-center">
+                To make a donation and support our cause, please reach out to us through any of these channels:
+              </p>
               
-              <div className="bg-white p-8 rounded-lg shadow-lg relative z-10 border-t-4 border-[#c0392b]">
-                {/* Donation Type Selector */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-4 text-[#c0392b]">Select Donation Type</h3>
-                  <div className="flex rounded-md overflow-hidden border border-[#e9d5c2]">
-                    <button 
-                      onClick={() => setDonationType('one-time')} 
-                      className={`py-3 px-5 rounded-full flex-1 transition-colors font-medium ${
-                        donationType === 'one-time' 
-                          ? 'bg-[#c0392b] text-white' 
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
-                    >
-                      One-time
-                    </button>
-                    <button 
-                      onClick={() => setDonationType('monthly')} 
-                      className={`py-3 px-5 rounded-full flex-1 transition-colors font-medium ${
-                        donationType === 'monthly' 
-                          ? 'bg-[#c0392b] text-white' 
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
-                    >
-                      Monthly
-                    </button>
+              <div className="space-y-6">
+                {/* WhatsApp Contacts */}
+                <div className="flex items-center gap-4 p-4 bg-[#25D366]/10 rounded-lg">
+                  <div className="flex-shrink-0">
+                    <svg className="w-8 h-8 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
                   </div>
-                  <p className="mt-2 text-sm text-gray-600">
-                    {donationType === 'monthly' 
-                      ? 'Your monthly donation provides sustainable support for our ongoing programs.'
-                      : 'Your one-time gift makes an immediate impact for children in need.'}
-                  </p>
-                </div>
-                
-                {/* Amount Selector */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-4 text-[#c0392b]">Select Amount</h3>
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    {['25', '50', '100', '250', '500', 'custom'].map((amount) => (
-                      <button
-                        key={amount}
-                        onClick={() => handleAmountChange(amount)}
-                        className={`py-3 px-6 flex-1 text-center font-medium ${
-                          donationAmount === amount
-                            ? 'bg-[#c0392b] text-white' 
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                      >
-                        {amount === 'custom' ? 'Custom' : `$${amount}`}
-                      </button>
-                    ))}
-                  </div>
-                  
-                  {donationAmount === 'custom' && (
-                    <div className="mt-4">
-                      <label htmlFor="customAmount" className="sr-only">Custom amount</label>
-                      <div className="relative rounded-md">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <span className="text-gray-500">$</span>
-                        </div>
-                        <input
-                          type="number"
-                          id="customAmount"
-                          value={customAmount}
-                          onChange={handleCustomAmountChange}
-                          className="pl-8 block w-full rounded-md border-gray-300 border py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                          placeholder="Enter amount"
-                          min="1"
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Purpose Selector */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-4 text-[#c0392b]">Donation Purpose</h3>
-                  <select
-                    value={donationPurpose}
-                    onChange={(e) => setDonationPurpose(e.target.value)}
-                    className="w-full rounded-md border-gray-300 border py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                  >
-                    <option value="general">General Fund</option>
-                    <option value="education">Education Program</option>
-                    <option value="healthcare">Healthcare Services</option>
-                    <option value="nutrition">Nutrition Program</option>
-                    <option value="shelter">Shelter & Housing</option>
-                    <option value="vocational">Vocational Training</option>
-                  </select>
-                  
-                  <div className="mt-4 text-sm text-gray-600">
-                    {donationPurpose === 'general' && 'Your gift will be used where it is most needed across all our programs.'}
-                    {donationPurpose === 'education' && 'Help provide school fees, books, uniforms, and quality education for children.'}
-                    {donationPurpose === 'healthcare' && 'Support medical care, checkups, treatments, and health education.'}
-                    {donationPurpose === 'nutrition' && 'Provide nutritious meals, clean water, and nutrition education.'}
-                    {donationPurpose === 'shelter' && 'Help maintain and improve our residential facilities for orphaned children.'}
-                    {donationPurpose === 'vocational' && 'Support career training, tools, and apprenticeships for older youth.'}
-                  </div>
-                </div>
-                
-                {/* Personal Information */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-4 text-[#c0392b]">Your Information</h3>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-gray-700 mb-2">First Name *</label>
-                      <input 
-                        id="firstName" 
-                        type="text" 
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                        required 
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-gray-700 mb-2">Last Name *</label>
-                      <input 
-                        id="lastName" 
-                        type="text" 
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                        required 
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <label htmlFor="email" className="block text-gray-700 mb-2">Email *</label>
-                    <input 
-                      id="email" 
-                      type="email" 
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                      required 
-                    />
-                  </div>
-                  
-                  <div className="mb-4">
-                    <label htmlFor="phone" className="block text-gray-700 mb-2">Phone</label>
-                    <input 
-                      id="phone" 
-                      type="tel" 
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                    />
-                  </div>
-                </div>
-                
-                {/* Payment Information */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-4 text-[#c0392b]">Payment Method</h3>
-                  
-                  <div className="bg-white p-4 rounded-md border border-gray-300 mb-4">
-                    <div className="flex items-center mb-4">
-                      <input 
-                        id="paymentCredit" 
-                        name="paymentMethod" 
-                        type="radio" 
-                        className="h-4 w-4 text-[#c0392b] focus:ring-[#c0392b]" 
-                        defaultChecked 
-                      />
-                      <label htmlFor="paymentCredit" className="ml-3 block text-gray-700">
-                        Credit/Debit Card
-                      </label>
-                    </div>
-                    
-                    <div className="mb-4">
-                      <label htmlFor="cardNumber" className="block text-gray-700 mb-2">Card Number *</label>
-                      <input 
-                        id="cardNumber" 
-                        type="text" 
-                        placeholder="1234 5678 9012 3456" 
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                        required 
-                      />
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="expiryDate" className="block text-gray-700 mb-2">Expiry Date *</label>
-                        <input 
-                          id="expiryDate" 
-                          type="text" 
-                          placeholder="MM/YY" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                          required 
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="cvv" className="block text-gray-700 mb-2">CVV *</label>
-                        <input 
-                          id="cvv" 
-                          type="text" 
-                          placeholder="123" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e74c3c]"
-                          required 
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <div className="flex items-center">
-                      <input 
-                        id="paymentPaypal" 
-                        name="paymentMethod" 
-                        type="radio" 
-                        className="h-4 w-4 text-[#c0392b] focus:ring-[#c0392b]" 
-                      />
-                      <label htmlFor="paymentPaypal" className="ml-3 block text-gray-700">
-                        PayPal
-                      </label>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="flex items-center">
-                      <input 
-                        id="paymentMobile" 
-                        name="paymentMethod" 
-                        type="radio" 
-                        className="h-4 w-4 text-[#c0392b] focus:ring-[#c0392b]" 
-                      />
-                      <label htmlFor="paymentMobile" className="ml-3 block text-gray-700">
-                        Mobile Money
-                      </label>
+                  <div className="flex-grow">
+                    <h4 className="text-lg font-semibold mb-2 text-[#1a472a]">WhatsApp</h4>
+                    <div className="space-y-2">
+                      <a href="https://wa.me/256770610972" target="_blank" rel="noopener noreferrer" 
+                         className="block text-[#25D366] hover:text-[#128C7E] transition-colors">
+                        +256 770 610972
+                      </a>
+                      <a href="https://wa.me/256754903778" target="_blank" rel="noopener noreferrer"
+                         className="block text-[#25D366] hover:text-[#128C7E] transition-colors">
+                        +256 754 903778
+                      </a>
                     </div>
                   </div>
                 </div>
-                
-                {/* Submit Button */}
-                <button 
-                  type="submit" 
-                  className="w-full bg-[#e74c3c] hover:bg-[#c0392b] text-white font-medium py-3 px-6 rounded-md transition-colors"
-                >
-                  {donationType === 'monthly' 
-                    ? `Donate $${donationAmount === 'custom' ? customAmount : donationAmount} Monthly` 
-                    : `Donate $${donationAmount === 'custom' ? customAmount : donationAmount}`}
-                </button>
-                
-                <p className="mt-4 text-sm text-gray-600 text-center">
-                  Your donation is tax-deductible. You will receive a receipt via email.
+
+                {/* Email Contact */}
+                <div className="flex items-center gap-4 p-4 bg-[#c0392b]/10 rounded-lg">
+                  <div className="flex-shrink-0">
+                    <svg className="w-8 h-8 text-[#c0392b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <div className="flex-grow">
+                    <h4 className="text-lg font-semibold mb-2 text-[#c0392b]">Email</h4>
+                    <a href="mailto:Savethecryingchildrenfdn@gmail.com" 
+                       className="text-[#e74c3c] hover:text-[#c0392b] transition-colors">
+                      Savethecryingchildrenfdn@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-gray-50 rounded-lg">
+                <p className="text-gray-700">
+                  <span className="font-semibold">Why contact us directly?</span><br/>
+                  We prefer direct communication to:
                 </p>
+                <ul className="list-disc pl-6 mt-2 space-y-1 text-gray-600">
+                  <li>Discuss your preferred donation method</li>
+                  <li>Provide detailed information about our current needs</li>
+                  <li>Answer any questions you may have</li>
+                  <li>Ensure your donation makes the maximum impact</li>
+                </ul>
               </div>
             </div>
-            
-            {/* Sidebar Info */}
-            <div className="lg:w-5/12">
-              <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-[#c0392b]">Where Your Money Goes</h3>
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium text-gray-700">Programs & Services</span>
-                      <span className="font-medium text-gray-700">85%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div className="bg-[#c0392b] h-2.5 rounded-full" style={{ width: '85%' }}></div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium text-gray-700">Administration</span>
-                      <span className="font-medium text-gray-700">10%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div className="bg-[#c0392b] h-2.5 rounded-full" style={{ width: '10%' }}></div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium text-gray-700">Fundraising</span>
-                      <span className="font-medium text-gray-700">5%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div className="bg-[#e9d5c2] h-2.5 rounded-full" style={{ width: '5%' }}></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <p className="mt-4 text-gray-600 text-sm">
-                  We are committed to financial transparency and ensuring your donation creates maximum impact for the children we serve.
-                </p>
-              </div>
+
+            {/* Impact Section - Keep this from the original */}
+            <div className="bg-[#f8f3eb] rounded-lg p-6 mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-[#c0392b]">The Impact of Your Gift</h3>
               
-              <div className="bg-[#f8f3eb] rounded-lg p-6 mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-[#c0392b]">The Impact of Your Gift</h3>
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className="bg-[#c0392b] text-white p-2 rounded-md h-min">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-medium">$25</div>
+                    <p className="text-sm text-gray-600">Provides meals for a child for two weeks</p>
+                  </div>
+                </div>
                 
-                <div className="space-y-4">
-                  <div className="flex gap-3">
-                    <div className="bg-[#c0392b] text-white p-2 rounded-md h-min">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium">$25</div>
-                      <p className="text-sm text-gray-600">Provides meals for a child for two weeks</p>
-                    </div>
+                <div className="flex gap-3">
+                  <div className="bg-[#c0392b] text-white p-2 rounded-md h-min">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
                   </div>
-                  
-                  <div className="flex gap-3">
-                    <div className="bg-[#c0392b] text-white p-2 rounded-md h-min">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium">$50</div>
-                      <p className="text-sm text-gray-600">Covers school supplies and uniforms for a semester</p>
-                    </div>
+                  <div>
+                    <div className="font-medium">$50</div>
+                    <p className="text-sm text-gray-600">Covers school supplies and uniforms for a semester</p>
                   </div>
-                  
-                  <div className="flex gap-3">
-                    <div className="bg-[#c0392b] text-white p-2 rounded-md h-min">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium">$100</div>
-                      <p className="text-sm text-gray-600">Provides shelter and care for a child for one month</p>
-                    </div>
+                </div>
+                
+                <div className="flex gap-3">
+                  <div className="bg-[#c0392b] text-white p-2 rounded-md h-min">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
                   </div>
-                  
-                  <div className="flex gap-3">
-                    <div className="bg-[#c0392b] text-white p-2 rounded-md h-min">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium">$250</div>
-                      <p className="text-sm text-gray-600">Provides medical care for 5 children for three months</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-3">
-                    <div className="bg-[#c0392b] text-white p-2 rounded-md h-min">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium">$500</div>
-                      <p className="text-sm text-gray-600">Funds vocational training for one youth</p>
-                    </div>
+                  <div>
+                    <div className="font-medium">$100</div>
+                    <p className="text-sm text-gray-600">Provides shelter and care for a child for one month</p>
                   </div>
                 </div>
               </div>
-              
-              <div className="bg-white rounded-lg border border-gray-200 p-6">
-                <h3 className="text-xl font-semibold mb-4 text-[#c0392b]">Other Ways to Give</h3>
-                
-                <ul className="space-y-4">
-                  <li className="flex gap-3 items-start">
-                    <div className="bg-[#e9d5c2] text-[#c0392b] p-2 rounded-md">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <Link href="/get-involved" className="font-medium text-[#c0392b] hover:underline">Sponsor a Child</Link>
-                      <p className="text-sm text-gray-600">Make a lasting impact through our child sponsorship program.</p>
-                    </div>
-                  </li>
-                  
-                  <li className="flex gap-3 items-start">
-                    <div className="bg-[#e9d5c2] text-[#c0392b] p-2 rounded-md">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <Link href="/get-involved" className="font-medium text-[#c0392b] hover:underline">Legacy Giving</Link>
-                      <p className="text-sm text-gray-600">Leave a lasting impact through your will or estate planning.</p>
-                    </div>
-                  </li>
-                  
-                  <li className="flex gap-3 items-start">
-                    <div className="bg-[#e9d5c2] text-[#c0392b] p-2 rounded-md">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
-                    </div>
-                    <div>
-                      <Link href="/get-involved" className="font-medium text-[#c0392b] hover:underline">Stock Donations</Link>
-                      <p className="text-sm text-gray-600">Donate appreciated securities for tax benefits and impact.</p>
-                    </div>
-                  </li>
-                </ul>
-                
-                <div className="mt-6">
-                  <p className="text-gray-600 text-sm">
-                    For more information on these options, please <Link href="/contact" className="text-[#c0392b] hover:underline">contact us</Link>.
-                  </p>
-                </div>
-              </div>
+            </div>
+
+            {/* Transparency Section */}
+            <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold mb-4 text-[#c0392b]">Our Commitment to Transparency</h3>
+              <p className="text-gray-700 mb-4">
+                When you contact us about making a donation, we will:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Provide detailed information about our programs and current needs</li>
+                <li>Explain how your donation will be used</li>
+                <li>Share success stories and impact reports</li>
+                <li>Issue proper documentation for tax purposes</li>
+              </ul>
             </div>
           </div>
         </div>
