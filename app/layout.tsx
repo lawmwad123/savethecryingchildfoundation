@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Save the Crying Children Foundation",
   description: "Working towards a world where no child is born to cry",
+  verification: {
+    google: 'evbRXwu6GR2o3Cuf-QAXsIExyihlBHX1EHkAB0ZTLDs',
+  },
 };
 
 export default function RootLayout({
